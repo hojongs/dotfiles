@@ -110,3 +110,5 @@ export LANG=en_US.UTF-8
 alias gc='git commit'
 alias gcv='git commit --verbose'
 
+LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
+
