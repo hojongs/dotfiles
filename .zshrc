@@ -107,3 +107,6 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 
+alias gc='git commit'
+alias gcv='git commit --verbose'
+
