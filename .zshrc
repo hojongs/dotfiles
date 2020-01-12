@@ -111,8 +111,9 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 alias gc='git commit'
-alias gcv='git commit --verbose'
-alias gdc='git diff --cached'
+alias gca='gc --amend'
+alias gcv='gc --verbose'
+alias gdc='gd --cached'
 
 # WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS

@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe', {
   \'do': 'python3 ./install.py --java-completer' }
+Plugin 'tpope/vim-surround'
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -58,5 +59,5 @@ let g:NERDTreeWinPos = "left"
 " let NERDTreeShowHidden=1 " show hidden files
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.DS_Store']
 
-noremap! qw <esc>
+inoremap qq <esc>
 

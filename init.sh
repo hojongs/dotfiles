@@ -12,3 +12,7 @@ sudo apt -y install $PKGS
 sudo add-apt-repository ppa:aacebedo/fasd
 sudo apt-get install fasd
 
+# YCM submodule update
+cd ~/.vim/bundle/YouCompleteMe/
+git submodule update --init --recursive
+
