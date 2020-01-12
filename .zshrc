@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# mac home
+HOME=/Users/jeonjongho
+
 # Path to your oh-my-zsh installation.
-export ZSH="/home/hojong/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -109,6 +112,22 @@ export LANG=en_US.UTF-8
 
 alias gc='git commit'
 alias gcv='git commit --verbose'
+alias gdc='git diff --cached'
 
+# WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
+
+# add python 3.7 path
+export PATH="~/Library/Python/3.7/bin/:$PATH"
+
+# add psql (postgresql) path
+export PATH="/usr/local/Cellar/libpq/11.5_1/bin/:$PATH"
+
+# santa-server alias
+# alias psql='psql -U riiid -d postgres -h localhost -p 18586'
+alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid -password=helloworld'
+
+# gradle alias
+alias grc='./gradlew clean'
+alias grcgp='./gradlew clean generateProto'
 
