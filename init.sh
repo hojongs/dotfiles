@@ -9,3 +9,6 @@ PKGS="gradle \
     "
 sudo apt -y install $PKGS
 
+sudo add-apt-repository ppa:aacebedo/fasd
+sudo apt-get install fasd
+

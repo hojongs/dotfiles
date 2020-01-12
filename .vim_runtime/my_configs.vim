@@ -45,6 +45,16 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-" hybrid line number
-set nu! rnu! " number relativenumber
+" number relativenumber
+set nu rnu
+
+" WSL bug fix
+if (&term =~ '^xterm' && &t_Co == 256)
+    set t_ut= | set ttyscroll=1
+endif
+
+" NERDTree
+let g:NERDTreeWinPos = "left"
+" let NERDTreeShowHidden=1 " show hidden files
+let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.DS_Store']
 
