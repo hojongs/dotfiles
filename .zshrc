@@ -114,6 +114,7 @@ alias gc='git commit'
 alias gca='gc --amend'
 alias gcv='gc --verbose'
 alias gdc='gd --cached'
+alias gfgl='gf && gl'
 
 # WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS

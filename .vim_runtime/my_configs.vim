@@ -59,5 +59,5 @@ let g:NERDTreeWinPos = "left"
 " let NERDTreeShowHidden=1 " show hidden files
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.DS_Store']
 
-inoremap qq <esc>
+unmap 0
 
