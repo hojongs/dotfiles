@@ -16,3 +16,7 @@ sudo apt-get install fasd
 cd ~/.vim/bundle/YouCompleteMe/
 git submodule update --init --recursive
 
+# upgrade packages
+sudo apt -y update && sudo apt -y upgrade && sudo apt -y autoremove
+
+
