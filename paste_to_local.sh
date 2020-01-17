@@ -3,8 +3,14 @@
 SRC=~/dotfiles
 DST=~
 
-for f in ".zshrc .vimrc .vim_runtime/my_configs.vim .ideavimrc"
+for f in .zshrc .vimrc .ideavimrc
 do
-    cp -r $DST/$f $DST/$f.bak
-    cp -r $SRC/$f $DST
+    echo "cp $DST/$f $DST/$f.bak"
+    cp $DST/$f $DST/$f.bak
+    echo "cp $SRC/$f $DST/"
+    cp $SRC/$f $DST/
 done
+
+echo "cp $SRC/.vim_runtime/my_configs.vim $DST/.vim_runtime/my_configs.vim"
+cp $SRC/.vim_runtime/my_configs.vim $DST/.vim_runtime/my_configs.vim
+

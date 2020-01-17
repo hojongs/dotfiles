@@ -47,7 +47,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " number relativenumber
-set nu rnu
+set nu
 
 " WSL bug fix
 if (&term =~ '^xterm' && &t_Co == 256)
