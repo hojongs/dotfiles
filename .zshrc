@@ -133,3 +133,5 @@ alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid
 alias grc='./gradlew clean'
 alias grcgp='./gradlew clean generateProto'
 
+export DISPLAY=:0
+
