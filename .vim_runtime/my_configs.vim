@@ -62,3 +62,5 @@ let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.DS_Store']
 
 unmap 0
 
+nnoremap . ,
+
