@@ -1,11 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# mac home
-HOME=/Users/jeonjongho
-
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$(echo ~)/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -110,11 +107,8 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 
-alias gc='git commit'
 alias gca='gc --amend'
-alias gcv='gc --verbose'
 alias gdc='gd --cached'
-alias gfgl='gf && gl'
 
 # WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
