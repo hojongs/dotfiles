@@ -1,0 +1,2 @@
+* 0 * * * ~/dotfiles/paste_to_dotfiles.sh > ~/log/crontab_`date +\%Y.\%m.\%d.\%H.\%M.\%S`.log 2>&1; cd ~/dotfiles; git add .; git commit -m "commit by crontab"; git push
+

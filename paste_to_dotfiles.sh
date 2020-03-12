@@ -5,8 +5,6 @@ SRC=~
 
 for f in .zshrc .vimrc .ideavimrc
 do
-    echo "cp $DST/$f $DST/$f.bak"
-    cp $DST/$f $DST/$f.bak
     echo "cp $SRC/$f $DST/"
     cp $SRC/$f $DST/
     echo

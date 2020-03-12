@@ -107,7 +107,6 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=en_US.UTF-8
 
-alias gca='gc --amend'
 alias gdc='gd --cached'
 
 # WSL
@@ -119,13 +118,11 @@ export PATH="~/Library/Python/3.7/bin/:$PATH"
 # add psql (postgresql) path
 export PATH="/usr/local/Cellar/libpq/11.5_1/bin/:$PATH"
 
-# santa-server alias
-# alias psql='psql -U riiid -d postgres -h localhost -p 18586'
-alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid -password=helloworld'
+# add openjdk path
+export PATH="/usr/local/opt/openjdk/bin/:$PATH"
 
-# gradle alias
-alias grc='./gradlew clean'
-alias grcgp='./gradlew clean generateProto'
+# santa-server alias
+alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid -password=helloworld'
 
 export DISPLAY=:0
 
