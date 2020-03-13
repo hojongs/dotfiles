@@ -60,7 +60,8 @@ let g:NERDTreeWinPos = "left"
 " let NERDTreeShowHidden=1 " show hidden files
 let NERDTreeIgnore = ['\.pyc$', '__pycache__', '.DS_Store']
 
+" for ideavim
 unmap 0
-
-nnoremap . ,
+nmap 0 <Home>
+xmap 0 <Home>
 
