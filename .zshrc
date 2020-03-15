@@ -112,6 +112,9 @@ alias gdc='gd --cached'
 # WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
 
+# xming
+export DISPLAY=:0
+
 # add python 3.7 path
 export PATH="~/Library/Python/3.7/bin/:$PATH"
 
@@ -119,10 +122,35 @@ export PATH="~/Library/Python/3.7/bin/:$PATH"
 export PATH="/usr/local/Cellar/libpq/11.5_1/bin/:$PATH"
 
 # add openjdk path
-export PATH="/usr/local/opt/openjdk/bin/:$PATH"
+# export PATH="/usr/local/opt/openjdk/bin/:$PATH"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
+export PATH="$JAVA_HOME/bin/:$PATH"
 
 # santa-server alias
 alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid -password=helloworld'
 
-export DISPLAY=:0
+# openssl
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
 
+# anaconda
+# export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/usr/local/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# for crontab
+export VISUAL=/usr/local/bin/vim
