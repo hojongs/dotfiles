@@ -108,6 +108,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 alias gdc='gd --cached'
+alias gca='gc --amend'
 
 # WSL
 LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
@@ -154,3 +155,7 @@ unset __conda_setup
 
 # for crontab
 export VISUAL=/usr/local/bin/vim
+
+export AWS_REGION=ap-northeast-1
+export SANTA_S3_BUCKET=santa-cms-statics
+export SPRING_PROFILES_ACTIVE=local
