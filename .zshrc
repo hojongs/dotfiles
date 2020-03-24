@@ -156,6 +156,7 @@ unset __conda_setup
 # for crontab
 export VISUAL=/usr/local/bin/vim
 
-export AWS_REGION=ap-northeast-1
-export SANTA_S3_BUCKET=santa-cms-statics
-export SPRING_PROFILES_ACTIVE=local
+export AWS_PROFILE='inside'
+
+# k8s
+alias k='kubectl'
