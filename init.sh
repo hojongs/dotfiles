@@ -11,3 +11,6 @@ echo ln -s $DOTFILES_ROOT/.vimrc       ~/.vimrc
 ln -s      $DOTFILES_ROOT/.zshrc       ~/.zshrc
 echo ln -s $DOTFILES_ROOT/.zshrc       ~/.zshrc
 
+# for windows
+ln -s      $DOTFILES_ROOT/win/.bashrc  /.bashrc
+echo ln -s $DOTFILES_ROOT/win/.bashrc  /.bashrc
