@@ -17,5 +17,6 @@ alias gd='git diff'
 alias gdc='git diff --cached'
 
 alias gst='git status'
-alias glg='git log'
+alias glg='git log --stat'
+alias glgga='git log --graph --decorate --all'
 alias ga='git add'
