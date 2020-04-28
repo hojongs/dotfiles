@@ -14,5 +14,5 @@ ln -s      $DOTFILES_ROOT/.zshrc       ~/.zshrc
 
 # for windows
 echo echo: ln -s $DOTFILES_ROOT/win/.bashrc  ~/.bashrc
-ln -s      $DOTFILES_ROOT/win/.bashrc  ~/.bashrc
+ln -sf      $DOTFILES_ROOT/win/.bashrc  ~/.bashrc
 
