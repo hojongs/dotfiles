@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$(echo ~)/.oh-my-zsh"
+export ZSH="/home/hojong202011/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -33,7 +33,7 @@ ZSH_THEME="robbyrussell"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -64,17 +64,15 @@ ZSH_THEME="robbyrussell"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
-  # fasd
-  tmux
-  tmuxinator
+	git
+	fzf
+	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,59 +103,5 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export LANG=en_US.UTF-8
+export PATH=~/gradle-6.7/bin:$PATH
 
-alias gdc='gd --cached'
-alias gca='gc --amend'
-
-# WSL
-LS_COLORS=$LS_COLORS:'ow=1;34:' ; export LS_COLORS
-
-# xming
-export DISPLAY=:0
-
-# add python 3.7 path
-export PATH="~/Library/Python/3.7/bin/:$PATH"
-
-# add psql (postgresql) path
-export PATH="/usr/local/Cellar/libpq/11.5_1/bin/:$PATH"
-
-# add openjdk path
-# export PATH="/usr/local/opt/openjdk/bin/:$PATH"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home"
-export PATH="$JAVA_HOME/bin/:$PATH"
-
-# santa-server alias
-alias flyway='flyway -url=jdbc:postgresql://localhost:18586/postgres -user=riiid -password=helloworld'
-
-# openssl
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-
-# anaconda
-# export PATH="/usr/local/anaconda3/bin:$PATH"  # commented out by conda initialize
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/usr/local/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/usr/local/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-# for crontab
-export VISUAL=/usr/local/bin/vim
-
-export AWS_PROFILE='inside'
-
-# k8s
-alias k='kubectl'
-if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi

@@ -21,13 +21,7 @@ ALEFixPre	ale.txt	/*ALEFixPre*
 ALEFixPre-autocmd	ale.txt	/*ALEFixPre-autocmd*
 ALEFixSuggest	ale.txt	/*ALEFixSuggest*
 ALEGoToDefinition	ale.txt	/*ALEGoToDefinition*
-ALEGoToDefinitionInSplit	ale.txt	/*ALEGoToDefinitionInSplit*
-ALEGoToDefinitionInTab	ale.txt	/*ALEGoToDefinitionInTab*
-ALEGoToDefinitionInVSplit	ale.txt	/*ALEGoToDefinitionInVSplit*
 ALEGoToTypeDefinition	ale.txt	/*ALEGoToTypeDefinition*
-ALEGoToTypeDefinitionInSplit	ale.txt	/*ALEGoToTypeDefinitionInSplit*
-ALEGoToTypeDefinitionInTab	ale.txt	/*ALEGoToTypeDefinitionInTab*
-ALEGoToTypeDefinitionInVSplit	ale.txt	/*ALEGoToTypeDefinitionInVSplit*
 ALEHover	ale.txt	/*ALEHover*
 ALEInfo	ale.txt	/*ALEInfo*
 ALEInfo-highlight	ale.txt	/*ALEInfo-highlight*
@@ -50,6 +44,7 @@ ALEOrganizeImports	ale.txt	/*ALEOrganizeImports*
 ALEPrevious	ale.txt	/*ALEPrevious*
 ALEPreviousWrap	ale.txt	/*ALEPreviousWrap*
 ALERename	ale.txt	/*ALERename*
+ALERepeatSelection	ale.txt	/*ALERepeatSelection*
 ALEReset	ale.txt	/*ALEReset*
 ALEResetBuffer	ale.txt	/*ALEResetBuffer*
 ALEStopAllLSPs	ale.txt	/*ALEStopAllLSPs*
@@ -111,6 +106,8 @@ ale-asm-options	ale-asm.txt	/*ale-asm-options*
 ale-asyncomplete-integration	ale.txt	/*ale-asyncomplete-integration*
 ale-awk-gawk	ale-awk.txt	/*ale-awk-gawk*
 ale-awk-options	ale-awk.txt	/*ale-awk-options*
+ale-bats-options	ale-bats.txt	/*ale-bats-options*
+ale-bats-shellcheck	ale-bats.txt	/*ale-bats-shellcheck*
 ale-bib-bibclean	ale-bib.txt	/*ale-bib-bibclean*
 ale-bib-options	ale-bib.txt	/*ale-bib-options*
 ale-c-ccls	ale-c.txt	/*ale-c-ccls*
@@ -232,6 +229,7 @@ ale-go-gometalinter	ale-go.txt	/*ale-go-gometalinter*
 ale-go-gopls	ale-go.txt	/*ale-go-gopls*
 ale-go-govet	ale-go.txt	/*ale-go-govet*
 ale-go-options	ale-go.txt	/*ale-go-options*
+ale-go-revive	ale-go.txt	/*ale-go-revive*
 ale-go-staticcheck	ale-go.txt	/*ale-go-staticcheck*
 ale-go-to-definition	ale.txt	/*ale-go-to-definition*
 ale-go-to-type-definition	ale.txt	/*ale-go-to-type-definition*
@@ -462,6 +460,7 @@ ale-ruby-rufo	ale-ruby.txt	/*ale-ruby-rufo*
 ale-ruby-solargraph	ale-ruby.txt	/*ale-ruby-solargraph*
 ale-ruby-sorbet	ale-ruby.txt	/*ale-ruby-sorbet*
 ale-ruby-standardrb	ale-ruby.txt	/*ale-ruby-standardrb*
+ale-rust-analyzer	ale-rust.txt	/*ale-rust-analyzer*
 ale-rust-cargo	ale-rust.txt	/*ale-rust-cargo*
 ale-rust-options	ale-rust.txt	/*ale-rust-options*
 ale-rust-rls	ale-rust.txt	/*ale-rust-rls*
@@ -514,6 +513,7 @@ ale-tcl-options	ale-tcl.txt	/*ale-tcl-options*
 ale-terraform-fmt-fixer	ale-terraform.txt	/*ale-terraform-fmt-fixer*
 ale-terraform-options	ale-terraform.txt	/*ale-terraform-options*
 ale-terraform-terraform	ale-terraform.txt	/*ale-terraform-terraform*
+ale-terraform-terraform-lsp	ale-terraform.txt	/*ale-terraform-terraform-lsp*
 ale-terraform-tflint	ale-terraform.txt	/*ale-terraform-tflint*
 ale-tests	ale-development.txt	/*ale-tests*
 ale-tex-chktex	ale-tex.txt	/*ale-tex-chktex*
@@ -548,6 +548,7 @@ ale-vhdl-xvhdl	ale-vhdl.txt	/*ale-vhdl-xvhdl*
 ale-vim-help-options	ale-vim-help.txt	/*ale-vim-help-options*
 ale-vim-help-write-good	ale-vim-help.txt	/*ale-vim-help-write-good*
 ale-vim-options	ale-vim.txt	/*ale-vim-options*
+ale-vim-vimls	ale-vim.txt	/*ale-vim-vimls*
 ale-vim-vint	ale-vim.txt	/*ale-vim-vint*
 ale-vue-options	ale-vue.txt	/*ale-vue-options*
 ale-vue-prettier	ale-vue.txt	/*ale-vue-prettier*
@@ -660,6 +661,7 @@ b:ale_d_dls_executable	ale-d.txt	/*b:ale_d_dls_executable*
 b:ale_dart_dartanalyzer_executable	ale-dart.txt	/*b:ale_dart_dartanalyzer_executable*
 b:ale_dart_dartfmt_executable	ale-dart.txt	/*b:ale_dart_dartfmt_executable*
 b:ale_dart_dartfmt_options	ale-dart.txt	/*b:ale_dart_dartfmt_options*
+b:ale_default_navigation	ale.txt	/*b:ale_default_navigation*
 b:ale_disable_lsp	ale.txt	/*b:ale_disable_lsp*
 b:ale_dockerfile_dockerfile_lint_executable	ale-dockerfile.txt	/*b:ale_dockerfile_dockerfile_lint_executable*
 b:ale_dockerfile_dockerfile_lint_options	ale-dockerfile.txt	/*b:ale_dockerfile_dockerfile_lint_options*
@@ -689,6 +691,7 @@ b:ale_erlang_dialyzer_rebar3_profile	ale-erlang.txt	/*b:ale_erlang_dialyzer_reba
 b:ale_erlang_erlc_options	ale-erlang.txt	/*b:ale_erlang_erlc_options*
 b:ale_erlang_syntaxerl_executable	ale-erlang.txt	/*b:ale_erlang_syntaxerl_executable*
 b:ale_eruby_ruumba_executable	ale-eruby.txt	/*b:ale_eruby_ruumba_executable*
+b:ale_exclude_highlights	ale.txt	/*b:ale_exclude_highlights*
 b:ale_fix_on_save	ale.txt	/*b:ale_fix_on_save*
 b:ale_fix_on_save_ignore	ale.txt	/*b:ale_fix_on_save_ignore*
 b:ale_fixers	ale.txt	/*b:ale_fixers*
@@ -725,6 +728,8 @@ b:ale_go_gopls_options	ale-go.txt	/*b:ale_go_gopls_options*
 b:ale_go_govet_options	ale-go.txt	/*b:ale_go_govet_options*
 b:ale_go_langserver_executable	ale-go.txt	/*b:ale_go_langserver_executable*
 b:ale_go_langserver_options	ale-go.txt	/*b:ale_go_langserver_options*
+b:ale_go_revive_executable	ale-go.txt	/*b:ale_go_revive_executable*
+b:ale_go_revive_options	ale-go.txt	/*b:ale_go_revive_options*
 b:ale_go_staticcheck_lint_package	ale-go.txt	/*b:ale_go_staticcheck_lint_package*
 b:ale_go_staticcheck_options	ale-go.txt	/*b:ale_go_staticcheck_options*
 b:ale_hack_hack_executable	ale-hack.txt	/*b:ale_hack_hack_executable*
@@ -765,6 +770,7 @@ b:ale_java_checkstyle_executable	ale-java.txt	/*b:ale_java_checkstyle_executable
 b:ale_java_checkstyle_options	ale-java.txt	/*b:ale_java_checkstyle_options*
 b:ale_java_eclipse_config_path	ale-java.txt	/*b:ale_java_eclipse_config_path*
 b:ale_java_eclipse_executable	ale-java.txt	/*b:ale_java_eclipse_executable*
+b:ale_java_eclipselsp_javaagent	ale-java.txt	/*b:ale_java_eclipselsp_javaagent*
 b:ale_java_eclipselsp_path	ale-java.txt	/*b:ale_java_eclipselsp_path*
 b:ale_java_eclipselsp_workspace_path	ale-java.txt	/*b:ale_java_eclipselsp_workspace_path*
 b:ale_java_google_java_format_executable	ale-java.txt	/*b:ale_java_google_java_format_executable*
@@ -772,6 +778,7 @@ b:ale_java_google_java_format_options	ale-java.txt	/*b:ale_java_google_java_form
 b:ale_java_javac_classpath	ale-java.txt	/*b:ale_java_javac_classpath*
 b:ale_java_javac_executable	ale-java.txt	/*b:ale_java_javac_executable*
 b:ale_java_javac_options	ale-java.txt	/*b:ale_java_javac_options*
+b:ale_java_javac_sourcepath	ale-java.txt	/*b:ale_java_javac_sourcepath*
 b:ale_java_javalsp_config	ale-java.txt	/*b:ale_java_javalsp_config*
 b:ale_java_javalsp_executable	ale-java.txt	/*b:ale_java_javalsp_executable*
 b:ale_java_pmd_options	ale-java.txt	/*b:ale_java_pmd_options*
@@ -1020,6 +1027,8 @@ b:ale_ruby_sorbet_executable	ale-ruby.txt	/*b:ale_ruby_sorbet_executable*
 b:ale_ruby_sorbet_options	ale-ruby.txt	/*b:ale_ruby_sorbet_options*
 b:ale_ruby_standardrb_executable	ale-ruby.txt	/*b:ale_ruby_standardrb_executable*
 b:ale_ruby_standardrb_options	ale-ruby.txt	/*b:ale_ruby_standardrb_options*
+b:ale_rust_analyzer_config	ale-rust.txt	/*b:ale_rust_analyzer_config*
+b:ale_rust_analyzer_executable	ale-rust.txt	/*b:ale_rust_analyzer_executable*
 b:ale_rust_cargo_avoid_whole_workspace	ale-rust.txt	/*b:ale_rust_cargo_avoid_whole_workspace*
 b:ale_rust_cargo_check_all_targets	ale-rust.txt	/*b:ale_rust_cargo_check_all_targets*
 b:ale_rust_cargo_check_examples	ale-rust.txt	/*b:ale_rust_cargo_check_examples*
@@ -1084,6 +1093,8 @@ b:ale_tcl_nagelfar_executable	ale-tcl.txt	/*b:ale_tcl_nagelfar_executable*
 b:ale_tcl_nagelfar_options	ale-tcl.txt	/*b:ale_tcl_nagelfar_options*
 b:ale_terraform_fmt_executable	ale-terraform.txt	/*b:ale_terraform_fmt_executable*
 b:ale_terraform_fmt_options	ale-terraform.txt	/*b:ale_terraform_fmt_options*
+b:ale_terraform_langserver_executable	ale-terraform.txt	/*b:ale_terraform_langserver_executable*
+b:ale_terraform_langserver_options	ale-terraform.txt	/*b:ale_terraform_langserver_options*
 b:ale_terraform_terraform_executable	ale-terraform.txt	/*b:ale_terraform_terraform_executable*
 b:ale_terraform_tflint_executable	ale-terraform.txt	/*b:ale_terraform_tflint_executable*
 b:ale_terraform_tflint_options	ale-terraform.txt	/*b:ale_terraform_tflint_options*
@@ -1124,6 +1135,9 @@ b:ale_vhdl_vcom_executable	ale-vhdl.txt	/*b:ale_vhdl_vcom_executable*
 b:ale_vhdl_vcom_options	ale-vhdl.txt	/*b:ale_vhdl_vcom_options*
 b:ale_vhdl_xvhdl_executable	ale-vhdl.txt	/*b:ale_vhdl_xvhdl_executable*
 b:ale_vhdl_xvhdl_options	ale-vhdl.txt	/*b:ale_vhdl_xvhdl_options*
+b:ale_vim_vimls_config	ale-vim.txt	/*b:ale_vim_vimls_config*
+b:ale_vim_vimls_executable	ale-vim.txt	/*b:ale_vim_vimls_executable*
+b:ale_vim_vimls_use_global	ale-vim.txt	/*b:ale_vim_vimls_use_global*
 b:ale_vim_vint_executable	ale-vim.txt	/*b:ale_vim_vint_executable*
 b:ale_vim_vint_show_style_issues	ale-vim.txt	/*b:ale_vim_vint_show_style_issues*
 b:ale_virtualenv_dir_names	ale.txt	/*b:ale_virtualenv_dir_names*
@@ -1251,6 +1265,7 @@ g:ale_d_dls_executable	ale-d.txt	/*g:ale_d_dls_executable*
 g:ale_dart_dartanalyzer_executable	ale-dart.txt	/*g:ale_dart_dartanalyzer_executable*
 g:ale_dart_dartfmt_executable	ale-dart.txt	/*g:ale_dart_dartfmt_executable*
 g:ale_dart_dartfmt_options	ale-dart.txt	/*g:ale_dart_dartfmt_options*
+g:ale_default_navigation	ale.txt	/*g:ale_default_navigation*
 g:ale_disable_lsp	ale.txt	/*g:ale_disable_lsp*
 g:ale_dockerfile_dockerfile_lint_executable	ale-dockerfile.txt	/*g:ale_dockerfile_dockerfile_lint_executable*
 g:ale_dockerfile_dockerfile_lint_options	ale-dockerfile.txt	/*g:ale_dockerfile_dockerfile_lint_options*
@@ -1286,6 +1301,7 @@ g:ale_erlang_dialyzer_rebar3_profile	ale-erlang.txt	/*g:ale_erlang_dialyzer_reba
 g:ale_erlang_erlc_options	ale-erlang.txt	/*g:ale_erlang_erlc_options*
 g:ale_erlang_syntaxerl_executable	ale-erlang.txt	/*g:ale_erlang_syntaxerl_executable*
 g:ale_eruby_ruumba_executable	ale-eruby.txt	/*g:ale_eruby_ruumba_executable*
+g:ale_exclude_highlights	ale.txt	/*g:ale_exclude_highlights*
 g:ale_fix_on_save	ale.txt	/*g:ale_fix_on_save*
 g:ale_fix_on_save_ignore	ale.txt	/*g:ale_fix_on_save_ignore*
 g:ale_fixers	ale.txt	/*g:ale_fixers*
@@ -1322,6 +1338,8 @@ g:ale_go_gopls_options	ale-go.txt	/*g:ale_go_gopls_options*
 g:ale_go_govet_options	ale-go.txt	/*g:ale_go_govet_options*
 g:ale_go_langserver_executable	ale-go.txt	/*g:ale_go_langserver_executable*
 g:ale_go_langserver_options	ale-go.txt	/*g:ale_go_langserver_options*
+g:ale_go_revive_executable	ale-go.txt	/*g:ale_go_revive_executable*
+g:ale_go_revive_options	ale-go.txt	/*g:ale_go_revive_options*
 g:ale_go_staticcheck_lint_package	ale-go.txt	/*g:ale_go_staticcheck_lint_package*
 g:ale_go_staticcheck_options	ale-go.txt	/*g:ale_go_staticcheck_options*
 g:ale_hack_hack_executable	ale-hack.txt	/*g:ale_hack_hack_executable*
@@ -1364,6 +1382,7 @@ g:ale_java_checkstyle_executable	ale-java.txt	/*g:ale_java_checkstyle_executable
 g:ale_java_checkstyle_options	ale-java.txt	/*g:ale_java_checkstyle_options*
 g:ale_java_eclipse_config_path	ale-java.txt	/*g:ale_java_eclipse_config_path*
 g:ale_java_eclipse_executable	ale-java.txt	/*g:ale_java_eclipse_executable*
+g:ale_java_eclipselsp_javaagent	ale-java.txt	/*g:ale_java_eclipselsp_javaagent*
 g:ale_java_eclipselsp_path	ale-java.txt	/*g:ale_java_eclipselsp_path*
 g:ale_java_eclipselsp_workspace_path	ale-java.txt	/*g:ale_java_eclipselsp_workspace_path*
 g:ale_java_google_java_format_executable	ale-java.txt	/*g:ale_java_google_java_format_executable*
@@ -1371,6 +1390,7 @@ g:ale_java_google_java_format_options	ale-java.txt	/*g:ale_java_google_java_form
 g:ale_java_javac_classpath	ale-java.txt	/*g:ale_java_javac_classpath*
 g:ale_java_javac_executable	ale-java.txt	/*g:ale_java_javac_executable*
 g:ale_java_javac_options	ale-java.txt	/*g:ale_java_javac_options*
+g:ale_java_javac_sourcepath	ale-java.txt	/*g:ale_java_javac_sourcepath*
 g:ale_java_javalsp_config	ale-java.txt	/*g:ale_java_javalsp_config*
 g:ale_java_javalsp_executable	ale-java.txt	/*g:ale_java_javalsp_executable*
 g:ale_java_pmd_options	ale-java.txt	/*g:ale_java_pmd_options*
@@ -1644,6 +1664,8 @@ g:ale_ruby_sorbet_executable	ale-ruby.txt	/*g:ale_ruby_sorbet_executable*
 g:ale_ruby_sorbet_options	ale-ruby.txt	/*g:ale_ruby_sorbet_options*
 g:ale_ruby_standardrb_executable	ale-ruby.txt	/*g:ale_ruby_standardrb_executable*
 g:ale_ruby_standardrb_options	ale-ruby.txt	/*g:ale_ruby_standardrb_options*
+g:ale_rust_analyzer_config	ale-rust.txt	/*g:ale_rust_analyzer_config*
+g:ale_rust_analyzer_executable	ale-rust.txt	/*g:ale_rust_analyzer_executable*
 g:ale_rust_cargo_avoid_whole_workspace	ale-rust.txt	/*g:ale_rust_cargo_avoid_whole_workspace*
 g:ale_rust_cargo_check_all_targets	ale-rust.txt	/*g:ale_rust_cargo_check_all_targets*
 g:ale_rust_cargo_check_examples	ale-rust.txt	/*g:ale_rust_cargo_check_examples*
@@ -1723,6 +1745,8 @@ g:ale_tcl_nagelfar_executable	ale-tcl.txt	/*g:ale_tcl_nagelfar_executable*
 g:ale_tcl_nagelfar_options	ale-tcl.txt	/*g:ale_tcl_nagelfar_options*
 g:ale_terraform_fmt_executable	ale-terraform.txt	/*g:ale_terraform_fmt_executable*
 g:ale_terraform_fmt_options	ale-terraform.txt	/*g:ale_terraform_fmt_options*
+g:ale_terraform_langserver_executable	ale-terraform.txt	/*g:ale_terraform_langserver_executable*
+g:ale_terraform_langserver_options	ale-terraform.txt	/*g:ale_terraform_langserver_options*
 g:ale_terraform_terraform_executable	ale-terraform.txt	/*g:ale_terraform_terraform_executable*
 g:ale_terraform_tflint_executable	ale-terraform.txt	/*g:ale_terraform_tflint_executable*
 g:ale_terraform_tflint_options	ale-terraform.txt	/*g:ale_terraform_tflint_options*
@@ -1764,6 +1788,9 @@ g:ale_vhdl_vcom_executable	ale-vhdl.txt	/*g:ale_vhdl_vcom_executable*
 g:ale_vhdl_vcom_options	ale-vhdl.txt	/*g:ale_vhdl_vcom_options*
 g:ale_vhdl_xvhdl_executable	ale-vhdl.txt	/*g:ale_vhdl_xvhdl_executable*
 g:ale_vhdl_xvhdl_options	ale-vhdl.txt	/*g:ale_vhdl_xvhdl_options*
+g:ale_vim_vimls_config	ale-vim.txt	/*g:ale_vim_vimls_config*
+g:ale_vim_vimls_executable	ale-vim.txt	/*g:ale_vim_vimls_executable*
+g:ale_vim_vimls_use_global	ale-vim.txt	/*g:ale_vim_vimls_use_global*
 g:ale_vim_vint_executable	ale-vim.txt	/*g:ale_vim_vint_executable*
 g:ale_vim_vint_show_style_issues	ale-vim.txt	/*g:ale_vim_vint_show_style_issues*
 g:ale_virtualenv_dir_names	ale.txt	/*g:ale_virtualenv_dir_names*

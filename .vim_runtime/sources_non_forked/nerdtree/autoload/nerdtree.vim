@@ -45,7 +45,7 @@ function! nerdtree#slash() abort
 endfunction
 
 "FUNCTION: nerdtree#and(x,y) {{{2
-" Implements and() function for Vim <= 7.2
+" Implements and() function for Vim <= 7.4
 function! nerdtree#and(x,y) abort
     if exists('*and')
         return and(a:x, a:y)
@@ -169,8 +169,11 @@ function! nerdtree#exec(cmd, ignoreAll) abort
     if a:ignoreAll
         set eventignore=all
     endif
-    exec a:cmd
-    let &eventignore = old_ei
+    try
+        exec a:cmd
+    finally
+        let &eventignore = old_ei
+    endtry
 endfunction
 
 " FUNCTION: nerdtree#has_opt(options, name) {{{2
