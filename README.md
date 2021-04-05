@@ -7,6 +7,13 @@ sh ~/.vim_runtime/install_awesome_vimrc.sh
 ```
 ## Install Vundle.vim
 https://github.com/VundleVim/Vundle.vim#quick-start
+### youcompleteme as Vundle Plugin
+https://vimawesome.com/plugin/youcompleteme
+- You need to install manually. it requires cmake, g++, python-dev. otherwise you'll see the message "The ycmd server SHUT DOWN (restart with :YcmRestartServer)"
+```bash
+cd ~/.vim/bundle/YouCompleteMe
+python3 install.py
+```
 
 ## Init dotfiles
 ```bash
@@ -30,3 +37,4 @@ C-R
 
 ### Mac or Linux
 crontab $DOTFILES/cronjobs.txt
+
