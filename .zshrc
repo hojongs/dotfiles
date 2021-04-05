@@ -162,3 +162,6 @@ export AWS_PROFILE='inside'
 # k8s
 alias k='kubectl'
 if [ /usr/local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+
+export PATH=$PATH:/usr/local/go/bin
+
