@@ -12,6 +12,9 @@ ln -s      $DOTFILES_ROOT/.vimrc       ~/.vimrc
 echo echo: ln -s $DOTFILES_ROOT/.zshrc       ~/.zshrc
 ln -s      $DOTFILES_ROOT/.zshrc       ~/.zshrc
 
+git config --global user.email "hojong.jjh@gmail.com"
+git config --global user.name "Jongho Jeon"
+
 # for windows
 echo echo: ln -s $DOTFILES_ROOT/win/.bashrc  ~/.bashrc
 ln -sf      $DOTFILES_ROOT/win/.bashrc  ~/.bashrc

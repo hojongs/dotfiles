@@ -20,3 +20,5 @@ alias gst='git status'
 alias glg='git log --stat'
 alias glgga='git log --graph --decorate --all'
 alias ga='git add'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

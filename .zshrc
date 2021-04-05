@@ -75,6 +75,7 @@ plugins=(
   # fasd
   tmux
   tmuxinator
+  fzf
 )
 
 source $ZSH/oh-my-zsh.sh
