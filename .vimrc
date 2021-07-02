@@ -87,7 +87,7 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-set whichwrap+=<,>,h,l
+" set whichwrap+=<,>,h,l
 
 " Ignore case when searching
 set ignorecase
@@ -271,7 +271,7 @@ set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ 
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remap VIM 0 to first non-blank character
-map 0 ^
+" map 0 ^
 
 " Move a line of text using ALT+[jk] or Command+[jk] on mac
 nmap <M-j> mz:m+<cr>`z
