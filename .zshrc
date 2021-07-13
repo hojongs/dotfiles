@@ -119,3 +119,6 @@ PS1='$(kube_ps1)'$PS1
 # for Rust
 source $HOME/.cargo/env
 
+# for golang
+PATH="$HOME/go/bin:$PATH"
+
