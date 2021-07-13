@@ -108,7 +108,11 @@ source $ZSH/oh-my-zsh.sh
 source ~/.zshrc-hidden
 
 # for k8s
+## shell autocompletion
+source <(kubectl completion zsh)
 alias k=kubectl
+complete -F __start_kubectl k
+## pube-ps1
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
 PS1='$(kube_ps1)'$PS1
 
