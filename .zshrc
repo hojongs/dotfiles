@@ -75,6 +75,8 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     fzf # Ctrl-R, Ctrl-T
+    docker
+    docker-compose
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,3 +124,5 @@ source $HOME/.cargo/env
 # for golang
 PATH="$HOME/go/bin:$PATH"
 
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
