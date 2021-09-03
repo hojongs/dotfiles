@@ -126,3 +126,5 @@ PATH="$HOME/go/bin:$PATH"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export PATH="/Users/jeonjongho/git-fuzzy/bin:$PATH"
