@@ -127,7 +127,9 @@ PATH="$HOME/go/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export PATH="/Users/jeonjongho/git-fuzzy/bin:$PATH"
+
+# git clone https://github.com/bigH/git-fuzzy.git
+export PATH="$HOME/git-fuzzy/bin:$PATH"
 
 # JAVA
 JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
