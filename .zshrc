@@ -128,3 +128,10 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 export PATH="/Users/jeonjongho/git-fuzzy/bin:$PATH"
+
+# JAVA
+JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
+PATH="$JAVA_HOME/bin:$PATH"
+
+alias idea='open -na "IntelliJ IDEA.app"'
+
