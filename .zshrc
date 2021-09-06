@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/jongho/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -115,7 +115,8 @@ source <(kubectl completion zsh)
 alias k=kubectl
 complete -F __start_kubectl k
 ## pube-ps1
-source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh"
+source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 PS1='$(kube_ps1)'$PS1
 
 # for Rust
