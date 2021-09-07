@@ -120,6 +120,7 @@ source $ZSH_HIDDEN_PATH
 # k8s: shell autocompletion
 if ! command -v kubectl &> /dev/null
 then
+    echo 'kubectl not found. Install kubectl'
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/$(arch)/kubectl"
 fi
 source <(kubectl completion zsh)
@@ -127,17 +128,19 @@ alias k=kubectl
 complete -F __start_kubectl k
 
 # k8s: kube-ps1
-if ! command -v kube_ps1 &> /dev/null
-then
-    brew install kube-ps1
-fi
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 PS1='$(kube_ps1)'$PS1
+if ! command -v kube_ps1 &> /dev/null
+then
+    echo 'kube_ps1 not found. Install kube_ps1'
+    brew install kube-ps1
+fi
 
 # Rust
 if ! command -v rustc &> /dev/null
 then
+    echo 'rustc not found. Install rustup'
     curl https://sh.rustup.rs -sSf | sh -s -- --help
 fi
 source $HOME/.cargo/env
@@ -145,6 +148,7 @@ source $HOME/.cargo/env
 # golang
 if ! command -v go &> /dev/null
 then
+    echo 'go not found. Install go'
     brew install go
 fi
 PATH="$HOME/go/bin:$PATH"
@@ -152,6 +156,7 @@ PATH="$HOME/go/bin:$PATH"
 # pyenv
 if ! command -v pyenv &> /dev/null
 then
+    echo 'pyenv not found. Install pyenv'
     brew install pyenv
     echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
 fi
@@ -168,6 +173,7 @@ export PATH="$HOME/git-fuzzy/bin:$PATH"
 # java (adopt openjdk): https://github.com/AdoptOpenJDK/homebrew-openjdk
 if ! command -v java &> /dev/null
 then
+    echo 'java not found. Install adopt-openjdk'
     brew install temurin8
 fi
 JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
@@ -179,18 +185,21 @@ alias idea='open -na "IntelliJ IDEA.app"'
 # bat : https://github.com/sharkdp/bat
 if ! command -v bat &> /dev/null
 then
+    echo 'bat not found. Install bat'
     brew install bat
 fi
 
 # node.js / npm
 if ! command -v node &> /dev/null
 then
+    echo 'node not found. Install node'
     brew install node
 fi
 
 # git-split-diffs
 if ! command -v git-split-diffs &> /dev/null
 then
+    echo 'git-split-diffs not found. Install git-split-diffs'
     npm install -g git-split-diffs
 
     git config --global core.pager "git-split-diffs --color | less -RFX"
