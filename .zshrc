@@ -128,8 +128,7 @@ alias k=kubectl
 complete -F __start_kubectl k
 
 # k8s: kube-ps1
-source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
+source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 PS1='$(kube_ps1)'$PS1
 if ! command -v kube_ps1 &> /dev/null
 then
