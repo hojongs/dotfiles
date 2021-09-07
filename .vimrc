@@ -388,3 +388,4 @@ endfunction
 " https://stackoverflow.com/a/11489440
 set clipboard=unnamed
 
+set nu
