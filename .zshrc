@@ -109,34 +109,90 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-source ~/.zshrc-hidden
+# my .zshrc-hidden
+ZSH_HIDDEN_PATH="$HOME/.zshrc-hidden"
+if [ ! -d $ZSH_HIDDEN_PATH ]
+then
+    touch $ZSH_HIDDEN_PATH
+fi
+source $ZSH_HIDDEN_PATH
 
-# for k8s
-## shell autocompletion
+# k8s: shell autocompletion
+if ! command -v kubectl &> /dev/null
+then
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/$(arch)/kubectl"
+fi
 source <(kubectl completion zsh)
 alias k=kubectl
 complete -F __start_kubectl k
-## pube-ps1
+
+# k8s: kube-ps1
+if ! command -v kube_ps1 &> /dev/null
+then
+    brew install kube-ps1
+fi
 source "/opt/homebrew/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 source "/usr/local/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 PS1='$(kube_ps1)'$PS1
 
-# for Rust
+# Rust
+if ! command -v rustc &> /dev/null
+then
+    curl https://sh.rustup.rs -sSf | sh -s -- --help
+fi
 source $HOME/.cargo/env
 
-# for golang
+# golang
+if ! command -v go &> /dev/null
+then
+    brew install go
+fi
 PATH="$HOME/go/bin:$PATH"
 
+# pyenv
+if ! command -v pyenv &> /dev/null
+then
+    brew install pyenv
+    echo 'eval "$(pyenv init --path)"' >> ~/.zprofile
+fi
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-
-# git clone https://github.com/bigH/git-fuzzy.git
+# git-fuzzy
+if [ ! -d "$HOME/git-fuzzy" ]
+then
+    git clone https://github.com/bigH/git-fuzzy.git
+fi
 export PATH="$HOME/git-fuzzy/bin:$PATH"
 
-# JAVA
+# java (adopt openjdk): https://github.com/AdoptOpenJDK/homebrew-openjdk
+if ! command -v java &> /dev/null
+then
+    brew install temurin8
+fi
 JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 PATH="$JAVA_HOME/bin:$PATH"
 
+# IntelliJ IDEA
 alias idea='open -na "IntelliJ IDEA.app"'
+
+# bat : https://github.com/sharkdp/bat
+if ! command -v bat &> /dev/null
+then
+    brew install bat
+fi
+
+# node.js / npm
+if ! command -v node &> /dev/null
+then
+    brew install node
+fi
+
+# git-split-diffs
+if ! command -v git-split-diffs &> /dev/null
+then
+    npm install -g git-split-diffs
+
+    git config --global core.pager "git-split-diffs --color | less -RFX"
+fi
 
