@@ -76,7 +76,7 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
-    fzf # Ctrl-R, Ctrl-T
+    fzf # Ctrl-R, Ctrl-T, Option-C
     docker
     docker-compose
 )
@@ -217,5 +217,48 @@ if ! command -v jq &> /dev/null
 then
     echo 'jq not found. Install it'
     brew install jq
+fi
+
+# awscli
+if ! command -v aws &> /dev/null
+then
+    echo 'awscli not found. Install it'
+    brew install awscli
+fi
+
+# gh : GitHub CLI
+if ! command -v gh &> /dev/null
+then
+    echo 'gh not found. Install it'
+    brew install gh
+fi
+
+# rg
+if ! command -v rg &> /dev/null
+then
+    echo 'rg not found. Install it'
+    brew install ripgrep
+fi
+
+# fzf
+if ! command -v fzf &> /dev/null
+then
+    echo 'fzf not found. Install it'
+    brew install fzf
+
+    # To install useful key bindings and fuzzy completion:
+    $(brew --prefix)/opt/fzf/install
+fi
+
+# zsh-autosuggestions
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]
+then
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+fi
+
+# zsh-syntax-highlighting
+if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]
+then
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
 
