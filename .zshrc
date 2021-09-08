@@ -211,3 +211,11 @@ then
     brew install z
 fi
 
+
+# jq : JSON processor
+if ! command -v jq &> /dev/null
+then
+    echo 'jq not found. Install it'
+    brew install jq
+fi
+
