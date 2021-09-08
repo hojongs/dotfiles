@@ -202,3 +202,12 @@ then
     brew install delta
 fi
 
+source /opt/homebrew/etc/profile.d/z.sh
+
+# z : jump around, better cd
+if ! command -v z &> /dev/null
+then
+    echo 'z not found. Install it'
+    brew install z
+fi
+
