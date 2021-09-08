@@ -76,7 +76,8 @@ plugins=(
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
-    fzf # Ctrl-R, Ctrl-T, Option-C
+    zsh-interactive-cd
+    z
     docker
     docker-compose
 )
@@ -128,6 +129,7 @@ alias k=kubectl
 complete -F __start_kubectl k
 
 # k8s: kube-ps1
+# https://github.com/jonmosco/kube-ps1
 source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
 PS1='$(kube_ps1)'$PS1
 if ! command -v kube_ps1 &> /dev/null
@@ -153,6 +155,7 @@ fi
 PATH="$HOME/go/bin:$PATH"
 
 # pyenv
+# https://github.com/pyenv/pyenv
 if ! command -v pyenv &> /dev/null
 then
     echo 'pyenv not found. Install it'
@@ -163,13 +166,15 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 # git-fuzzy
+# https://github.com/bigH/git-fuzzy
 if [ ! -d "$HOME/git-fuzzy" ]
 then
     git clone https://github.com/bigH/git-fuzzy.git
 fi
 export PATH="$HOME/git-fuzzy/bin:$PATH"
 
-# java (adopt openjdk): https://github.com/AdoptOpenJDK/homebrew-openjdk
+# java (adopt openjdk)
+# https://github.com/AdoptOpenJDK/homebrew-openjdk
 if ! command -v java &> /dev/null
 then
     echo 'java not found. Install it'
@@ -181,7 +186,8 @@ PATH="$JAVA_HOME/bin:$PATH"
 # IntelliJ IDEA
 alias idea='open -na "IntelliJ IDEA.app"'
 
-# bat : https://github.com/sharkdp/bat
+# bat
+# https://github.com/sharkdp/bat
 if ! command -v bat &> /dev/null
 then
     echo 'bat not found. Install it'
@@ -196,23 +202,24 @@ then
 fi
 
 # delta : git diff pretty
+# https://github.com/dandavison/delta#installation
 if ! command -v delta &> /dev/null
 then
     echo 'delta not found. Install it'
     brew install delta
 fi
 
-source /opt/homebrew/etc/profile.d/z.sh
-
-# z : jump around, better cd
+# z
+# https://github.com/rupa/z
 if ! command -v z &> /dev/null
 then
     echo 'z not found. Install it'
     brew install z
 fi
-
+source $(brew --prefix)/etc/profile.d/z.sh
 
 # jq : JSON processor
+# https://github.com/stedolan/jq
 if ! command -v jq &> /dev/null
 then
     echo 'jq not found. Install it'
@@ -227,38 +234,50 @@ then
 fi
 
 # gh : GitHub CLI
+# https://github.com/cli/cli
 if ! command -v gh &> /dev/null
 then
     echo 'gh not found. Install it'
     brew install gh
 fi
 
-# rg
+# rg : ripgrep
+# https://github.com/BurntSushi/ripgrep#installation
 if ! command -v rg &> /dev/null
 then
     echo 'rg not found. Install it'
     brew install ripgrep
 fi
 
-# fzf
-if ! command -v fzf &> /dev/null
-then
-    echo 'fzf not found. Install it'
-    brew install fzf
-
-    # To install useful key bindings and fuzzy completion:
-    $(brew --prefix)/opt/fzf/install
-fi
-
 # zsh-autosuggestions
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions
 if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]
 then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 
 # zsh-syntax-highlighting
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-syntax-highlighting
 if [ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]
 then
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 fi
+
+# zsh-navigation-tools : Ctrl-R
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-navigation-tools
+if [ ! -d "$HOME/.config/znt/zsh-navigation-tools/" ]
+then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zsh-navigation-tools/master/doc/install.sh)"
+fi
+### ZNT's installer added snippet ###
+fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
+autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
+autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
+alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
+alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
+zle -N znt-history-widget
+bindkey '^R' znt-history-widget
+setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
+zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
+### END ###
 
