@@ -80,6 +80,13 @@ plugins=(
     z
     docker
     docker-compose
+    npm
+    yarn
+    tmux
+    timer
+    kubectl
+    gradle
+    history
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -125,7 +132,6 @@ then
     curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/darwin/$(arch)/kubectl"
 fi
 source <(kubectl completion zsh)
-alias k=kubectl
 complete -F __start_kubectl k
 
 # k8s: kube-ps1

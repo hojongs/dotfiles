@@ -53,3 +53,9 @@ https://github.com/gradle/gradle
 brew install gradle
 ```
 
+# Other Utils
+
+```
+brew install tmux
+```
+
