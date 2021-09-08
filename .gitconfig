@@ -1,10 +1,12 @@
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [user]
-	email = hojong.jjh@gmail.com
-	name = Jongho Jeon
+    email = hojong.jjh@gmail.com
+    name = Jongho Jeon
 [pull]
-	ff = only
+    ff = only
+[diff]
+    colorMoved = default
 [pager]
     diff = delta
     log = delta
@@ -14,6 +16,8 @@
     navigate = true
     side-by-side = true
     line-numbers = true
+    syntax-theme = DarkNeon
+    zero-style = syntax "#181818"
 [interactive]
     diffFilter = delta --color-only
 
