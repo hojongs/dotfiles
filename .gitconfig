@@ -1,0 +1,19 @@
+[init]
+	defaultBranch = main
+[user]
+	email = hojong.jjh@gmail.com
+	name = Jongho Jeon
+[pull]
+	ff = only
+[pager]
+    diff = delta
+    log = delta
+    reflog = delta
+    show = delta
+[delta]
+    navigate = true
+    side-by-side = true
+    line-numbers = true
+[interactive]
+    diffFilter = delta --color-only
+
