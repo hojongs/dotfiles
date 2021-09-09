@@ -88,6 +88,7 @@ plugins=(
     gradle
     history
     brew
+    fzf
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -231,6 +232,14 @@ if ! command -v jq &> /dev/null
 then
     echo 'jq not found. Install it'
     brew install jq
+fi
+
+# fzf
+# https://github.com/junegunn/fzf
+if ! command -v fzf &> /dev/null
+then
+    echo 'fzf not found. Install it'
+    brew install fzf
 fi
 
 # awscli
