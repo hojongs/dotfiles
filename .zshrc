@@ -87,6 +87,7 @@ plugins=(
     kubectl
     gradle
     history
+    brew
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -212,7 +213,7 @@ fi
 if ! command -v delta &> /dev/null
 then
     echo 'delta not found. Install it'
-    brew install delta
+    brew install git-delta
 fi
 
 # z
