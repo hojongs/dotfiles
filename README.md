@@ -56,6 +56,6 @@ brew install gradle
 # Other Utils
 
 ```
-brew install tmux
+brew install tmux cask
 ```
 

@@ -248,6 +248,9 @@ then
     echo 'awscli not found. Install it'
     brew install awscli
 fi
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C $(which aws_completer) aws
 
 # gh : GitHub CLI
 # https://github.com/cli/cli
