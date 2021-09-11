@@ -73,6 +73,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+    aws
     git
     zsh-syntax-highlighting
     zsh-autosuggestions
@@ -248,9 +249,9 @@ then
     echo 'awscli not found. Install it'
     brew install awscli
 fi
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-complete -C $(which aws_completer) aws
+# autoload bashcompinit && bashcompinit
+# autoload -Uz compinit && compinit
+# complete -C $(which aws_completer) aws
 
 # gh : GitHub CLI
 # https://github.com/cli/cli
@@ -299,4 +300,8 @@ bindkey '^R' znt-history-widget
 setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
 zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 ### END ###
+
+# pbkit
+source <(pb completions zsh)
+source <(pollapo completions zsh)
 
