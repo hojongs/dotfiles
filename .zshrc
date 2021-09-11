@@ -75,6 +75,7 @@ HIST_STAMPS="yyyy-mm-dd"
 plugins=(
     aws
     git
+    gh
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-interactive-cd
@@ -119,6 +120,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+PATH="$HOME/bin:$PATH"
 
 # my .zshrc-hidden
 ZSH_HIDDEN_PATH="$HOME/.zshrc-hidden"
@@ -193,7 +196,10 @@ JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
 PATH="$JAVA_HOME/bin:$PATH"
 
 # IntelliJ IDEA
-alias idea='open -na "IntelliJ IDEA.app"'
+if ! command -v idea &> /dev/null
+then
+    alias idea='open -na "IntelliJ IDEA.app"'
+fi
 
 # bat
 # https://github.com/sharkdp/bat
@@ -304,4 +310,8 @@ zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 # pbkit
 source <(pb completions zsh)
 source <(pollapo completions zsh)
+
+# some aliases
+alias eixt="exit"
+alias zshrc="vi ~/.zshrc"
 
