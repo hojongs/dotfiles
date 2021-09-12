@@ -3,6 +3,8 @@
 [user]
     email = hojong.jjh@gmail.com
     name = Jongho Jeon
+[core]
+	editor = vim
 [pull]
     ff = only
 [diff]
