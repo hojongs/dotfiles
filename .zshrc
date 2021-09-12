@@ -234,7 +234,7 @@ then
         sudo apt install golang-go
     fi
 fi
-export PATH="$HOME/go/bin:$PATH"
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 # pyenv
 # https://github.com/pyenv/pyenv
