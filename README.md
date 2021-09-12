@@ -21,7 +21,15 @@ brew install ghz
 https://github.com/fullstorydev/grpcui
 
 ```
-go install github.com/fullstorydev/grpcui/cmd/grpcui
+go install github.com/fullstorydev/grpcui/cmd/grpcui@latest
+```
+
+### protoc
+
+https://grpc.io/docs/protoc-installation/
+
+```
+brew install protobuf
 ```
 
 ### buf

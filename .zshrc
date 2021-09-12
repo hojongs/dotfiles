@@ -138,7 +138,7 @@ if [[ ! -d $HOME_BIN ]]
 then
     mkdir $HOME_BIN
 fi
-PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin:$PATH"
 
 # my .zshrc_home
 ZSH_HOME_PATH="$HOME/.zshrc_home"
@@ -234,7 +234,7 @@ then
         sudo apt install golang-go
     fi
 fi
-PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
 
 # pyenv
 # https://github.com/pyenv/pyenv
@@ -272,7 +272,9 @@ if [[ ! -d "$ZSH_HOME_PATH/git-fuzzy" ]]
 then
     gh repo clone bigH/git-fuzzy $ZSH_HOME_PATH/git-fuzzy
 fi
-PATH="$ZSH_HOME_PATH/git-fuzzy/bin:$PATH"
+export PATH="$ZSH_HOME_PATH/git-fuzzy/bin:$PATH"
+alias gzf='git fuzzy'
+alias gzfb='git fuzzy branch'
 
 # java (adopt openjdk)
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
@@ -298,7 +300,11 @@ fi
 if [[ $ZSHRC_DIST = 'darwin' ]]
 then
     JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
-    PATH="$JAVA_HOME/bin:$PATH"
+    export PATH="$JAVA_HOME/bin:$PATH"
+
+    # gradle depends on openjdk@11
+    export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
+    export CPPFLAGS="-I$(brew --prefix)/opt/openjdk@11/include $CPPFLAGS"
 fi
 
 # IntelliJ IDEA
