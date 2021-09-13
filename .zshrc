@@ -200,7 +200,7 @@ complete -F __start_kubectl k
 if [[ $ZSHRC_DIST = 'darwin' ]]
 then
     source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
-    # PS1='$(kube_ps1)'$PS1
+    PS1='$(kube_ps1)'$PS1
 else
     source $HOME/.zshrc_home/kube-ps1/kube-ps1.sh
 fi
@@ -234,7 +234,7 @@ then
         sudo apt install golang-go
     fi
 fi
-export PATH="$PATH:$(go env GOPATH)/bin"
+export PATH="$(go env GOPATH)/bin:$PATH"
 
 # pyenv
 # https://github.com/pyenv/pyenv
