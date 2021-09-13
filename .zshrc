@@ -459,6 +459,7 @@ source <(pollapo completions zsh)
 
 # some aliases
 alias eixt="exit"
+alias exi="exit"
 alias zshrc="vi ~/.zshrc"
 
 VIM_PACK_ROOT=$HOME/.vim/pack
