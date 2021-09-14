@@ -461,3 +461,32 @@ source <(pollapo completions zsh)
 alias eixt="exit"
 alias zshrc="vi ~/.zshrc"
 
+VIM_PACK_ROOT=$HOME/.vim/pack
+# surround.vim
+VIM_PACK_SURROUND_ROOT=$VIM_PACK_ROOT/tpope/start/surround
+if [[ ! -d $VIM_PACK_SURROUND_ROOT ]]
+then
+    mkdir -p ~/.vim/pack/tpope/start
+    git clone https://tpope.io/vim/surround.git $VIM_PACK_SURROUND_ROOT
+    vim -u NONE -c "helptags surround/doc" -c q
+fi
+unset VIM_PACK_SURROUND_ROOT
+# repeat.vim
+VIM_PACK_REPEAT_ROOT=$VIM_PACK_ROOT/tpope/start/repeat
+if [[ ! -d $VIM_PACK_REPEAT_ROOT ]]
+then
+    mkdir -p ~/.vim/pack/tpope/start
+    git clone https://tpope.io/vim/repeat.git $VIM_PACK_REPEAT_ROOT
+fi
+unset VIM_PACK_REPEAT_ROOT
+# sensible.vim
+VIM_PACK_SENSIBLE_ROOT=$VIM_PACK_ROOT/tpope/start/sensible
+if [[ ! -d $VIM_PACK_SENSIBLE_ROOT ]]
+then
+    mkdir -p ~/.vim/pack/tpope/start
+    git clone https://tpope.io/vim/sensible.git $VIM_PACK_SENSIBLE_ROOT
+fi
+unset VIM_PACK_SENSIBLE_ROOT
+# Add more vim plugins here...
+unset VIM_PACK_ROOT
+
