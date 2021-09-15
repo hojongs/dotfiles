@@ -87,7 +87,7 @@ set hid
 
 " Configure backspace so it acts as it should act
 set backspace=eol,start,indent
-" set whichwrap+=<,>,h,l
+set whichwrap+=<,>,h,l
 
 " Ignore case when searching
 set ignorecase

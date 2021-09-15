@@ -1,3 +1,20 @@
+# dotfiles
+
+This my dotfiles to setup my own development environment automatically
+
+Supported OS: Mac OS, WSL
+
+## How to use
+
+```shell
+git clone git@github.com:hojongs/dotfiles.git $HOME/dotfiles
+source $HOME/dotfiles/install.sh # just once
+ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+ln -s $HOME/dotfiles/.ideavimrc $HOME/.ideavimrc
+ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+```
+
 ## Github Action Utils
 
 https://github.com/nektos/act
