@@ -389,3 +389,4 @@ endfunction
 set clipboard=unnamed
 
 set nu
+

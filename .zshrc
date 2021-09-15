@@ -220,4 +220,5 @@ source <(pollapo completions zsh)
 alias eixt="exit"
 alias exi="exit"
 alias zshrc="vi ~/.zshrc"
+alias vimrc="vi ~/.vimrc"
 
