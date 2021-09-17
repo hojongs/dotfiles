@@ -221,4 +221,7 @@ alias eixt="exit"
 alias exi="exit"
 alias zshrc="vi ~/.zshrc"
 alias vimrc="vi ~/.vimrc"
-
+alias kc="kubectx"
+alias kn="kubens"
+alias kd="kubectl describe"
+alias kg="kubectl get"
