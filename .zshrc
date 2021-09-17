@@ -219,9 +219,12 @@ source <(pollapo completions zsh)
 # some aliases
 alias eixt="exit"
 alias exi="exit"
+alias ei="exit"
 alias zshrc="vi ~/.zshrc"
 alias vimrc="vi ~/.vimrc"
 alias kc="kubectx"
 alias kn="kubens"
 alias kd="kubectl describe"
 alias kg="kubectl get"
+alias ga.="git add ."
+
