@@ -272,6 +272,13 @@ then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zsh-navigation-tools/master/doc/install.sh)"
 fi
 
+# gradle-completion
+# https://github.com/gradle/gradle-completion
+if [[ ! -d "$HOME/.oh-my-zsh/plugins/gradle-completion" ]]
+then
+    git clone git://github.com/gradle/gradle-completion $HOME/.oh-my-zsh/plugins/gradle-completion
+fi
+
 # pbkit
 if ! command -v pb &> /dev/null
 then

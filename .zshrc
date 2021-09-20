@@ -87,7 +87,7 @@ plugins=(
     tmux
     timer
     kubectl
-    gradle
+    gradle-completion
     history
     brew
     fzf
@@ -180,12 +180,17 @@ alias gzfb='git fuzzy branch'
 # https://github.com/AdoptOpenJDK/homebrew-openjdk
 if [[ $ZSHRC_DIST = 'darwin' ]]
 then
-    JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
-    export PATH="$JAVA_HOME/bin:$PATH"
-
     # gradle depends on openjdk@11
-    export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
-    export CPPFLAGS="-I$(brew --prefix)/opt/openjdk@11/include $CPPFLAGS"
+    # export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
+    # export CPPFLAGS="-I$(brew --prefix)/opt/openjdk@11/include $CPPFLAGS"
+    
+    if [[ $(arch) = 'arm64' ]]
+    then
+        export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/azul-15.0.4/Contents/Home" # installed via intellij
+    else
+        export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home" # installed via brew
+    fi
+    export PATH="$JAVA_HOME/bin:$PATH"
 fi
 
 # z
@@ -226,5 +231,6 @@ alias kc="kubectx"
 alias kn="kubens"
 alias kd="kubectl describe"
 alias kg="kubectl get"
-alias ga.="git add ."
+alias ga.="ga ."
+alias gdc="gdca"
 
