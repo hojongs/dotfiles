@@ -217,7 +217,7 @@ setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
 zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
 ### END ###
 
-# pbkit
+# pbkit: https://github.com/pbkit/pbkit
 source <(pb completions zsh)
 source <(pollapo completions zsh)
 
@@ -233,4 +233,7 @@ alias kd="kubectl describe"
 alias kg="kubectl get"
 alias ga.="ga ."
 alias gdc="gdca"
+
+# git-extra: https://github.com/tj/git-extras
+. /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
 

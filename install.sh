@@ -327,3 +327,11 @@ unset VIM_PACK_SENSIBLE_ROOT
 # Add more vim plugins here...
 unset VIM_PACK_ROOT
 
+
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install git-extras
+else
+    sudo apt-get install git-extras
+fi
+
