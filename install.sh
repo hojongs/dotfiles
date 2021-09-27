@@ -329,10 +329,13 @@ unset VIM_PACK_SENSIBLE_ROOT
 unset VIM_PACK_ROOT
 
 
-if [[ $ZSHRC_DIST = 'darwin' ]]
+if ! command -v git-extras &> /dev/null
 then
-    brew install git-extras
-else
-    sudo apt-get install git-extras
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        brew install git-extras
+    else
+        sudo apt-get install git-extras
+    fi
 fi
 
