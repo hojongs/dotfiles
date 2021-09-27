@@ -235,5 +235,5 @@ alias ga.="ga ."
 alias gdc="gdca"
 
 # git-extra: https://github.com/tj/git-extras
-. /opt/homebrew/opt/git-extras/share/git-extras/git-extras-completion.zsh
+. $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
 

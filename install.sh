@@ -138,7 +138,8 @@ then
     echo 'java not found. Install it'
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        brew install temurin8
+        brew tap homebrew/cask-versions
+        brew install --cask temurin8
     else
         sudo apt install -y wget apt-transport-https gnupg
         wget https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public -O $HOME/public
