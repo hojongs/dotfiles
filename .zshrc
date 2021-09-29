@@ -233,6 +233,7 @@ alias kd="kubectl describe"
 alias kg="kubectl get"
 alias ga.="ga ."
 alias gdc="gdca"
+alias gpot="git push origin && git push origin --tags"
 
 # git-extra: https://github.com/tj/git-extras
 . $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
