@@ -339,3 +339,11 @@ then
     fi
 fi
 
+if ! command -v starship &> /dev/null
+then
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        brew install starship
+    fi
+fi
+
