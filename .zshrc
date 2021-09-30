@@ -233,6 +233,7 @@ alias kd="kubectl describe"
 alias kg="kubectl get"
 alias ga.="ga ."
 alias gdc="gdca"
+alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
 
