@@ -343,6 +343,8 @@ if ! command -v starship &> /dev/null
 then
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
+        brew tap homebrew/cask-fonts
+        brew install --cask font-jetbrains-mono-nerd-font
         brew install starship
     fi
 fi
