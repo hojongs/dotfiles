@@ -349,3 +349,10 @@ then
     fi
 fi
 
+if ! command -v watch &> /dev/null
+then
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        brew install watch
+    fi
+fi
