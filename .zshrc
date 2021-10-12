@@ -188,7 +188,7 @@ then
     then
         export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/azul-15.0.4/Contents/Home" # installed via intellij
     else
-        export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home" # installed via brew
+        export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/adopt-openjdk-15.0.2/Contents/Home" # installed via intellij
     fi
     export PATH="$JAVA_HOME/bin:$PATH"
 fi
