@@ -240,6 +240,6 @@ alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
 # git-extra: https://github.com/tj/git-extras
 . $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
 
-# starship
-eval "$(starship init zsh)"
+# python
+export PATH="/Users/jongho/Library/Python/3.8/bin:$PATH"
 
