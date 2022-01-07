@@ -167,5 +167,5 @@ alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
 
-echo "$(( $(gdate '+%s.%N')-$A )) seconds"
+echo "* Elapsed time to init zsh: $(( $(gdate '+%s.%N')-$A )) seconds"
 
