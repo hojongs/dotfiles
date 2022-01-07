@@ -1,3 +1,4 @@
+A=$(gdate '+%s.%N')
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -78,21 +79,11 @@ plugins=(
     gh
     zsh-syntax-highlighting
     zsh-autosuggestions
-    zsh-interactive-cd
     z
     docker
     docker-compose
-    npm
-    yarn
-    tmux
     timer
     kubectl
-    gradle-completion
-    history
-    brew
-    fzf
-    ubuntu
-    debian
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -142,10 +133,6 @@ export PATH="$HOME/bin:$PATH"
 # my .zshrc-hidden
 source $ZSH_HIDDEN_PATH
 
-# kubectl
-source <(kubectl completion zsh)
-complete -F __start_kubectl k
-
 # kube-ps1
 # https://github.com/jonmosco/kube-ps1
 if [[ $ZSHRC_DIST = 'darwin' ]]
@@ -155,6 +142,7 @@ then
 else
     source $HOME/.zshrc_home/kube-ps1/kube-ps1.sh
 fi
+kubeoff
 
 # Rust
 source $HOME/.cargo/env
@@ -162,69 +150,11 @@ source $HOME/.cargo/env
 # golang
 export PATH="$(go env GOPATH)/bin:$PATH"
 
-# pyenv
-# https://github.com/pyenv/pyenv
-eval "$(pyenv init -)"
-
-# pyenv-virtualenv
-# https://github.com/pyenv/pyenv-virtualenv
-eval "$(pyenv virtualenv-init -)"
-
-# git-fuzzy
-# https://github.com/bigH/git-fuzzy
-export PATH="$ZSH_HOME_PATH/git-fuzzy/bin:$PATH"
-alias gzf='git fuzzy'
-alias gzfb='git fuzzy branch'
-
-# java (adopt openjdk)
-# https://github.com/AdoptOpenJDK/homebrew-openjdk
-if [[ $ZSHRC_DIST = 'darwin' ]]
-then
-    # gradle depends on openjdk@11
-    # export PATH="$(brew --prefix)/opt/openjdk@11/bin:$PATH"
-    # export CPPFLAGS="-I$(brew --prefix)/opt/openjdk@11/include $CPPFLAGS"
-    
-    if [[ $(arch) = 'arm64' ]]
-    then
-        export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/azul-15.0.4/Contents/Home" # installed via intellij
-    else
-        export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/adopt-openjdk-15.0.2/Contents/Home" # installed via intellij
-    fi
-    export PATH="$JAVA_HOME/bin:$PATH"
-fi
-
-# z
-# https://github.com/rupa/z
-if [[ $ZSHRC_DIST = 'darwin' ]]
-then
-    source $(brew --prefix)/etc/profile.d/z.sh
-fi
-
-# awscli
-# autoload bashcompinit && bashcompinit
-# autoload -Uz compinit && compinit
-# complete -C $(which aws_completer) aws
-
-### ZNT's installer added snippet ###
-fpath=( "$fpath[@]" "$HOME/.config/znt/zsh-navigation-tools" )
-autoload n-aliases n-cd n-env n-functions n-history n-kill n-list n-list-draw n-list-input n-options n-panelize n-help
-autoload znt-usetty-wrapper znt-history-widget znt-cd-widget znt-kill-widget
-alias naliases=n-aliases ncd=n-cd nenv=n-env nfunctions=n-functions nhistory=n-history
-alias nkill=n-kill noptions=n-options npanelize=n-panelize nhelp=n-help
-zle -N znt-history-widget
-bindkey '^R' znt-history-widget
-setopt AUTO_PUSHD HIST_IGNORE_DUPS PUSHD_IGNORE_DUPS
-zstyle ':completion::complete:n-kill::bits' matcher 'r:|=** l:|=*'
-### END ###
-
-# pbkit: https://github.com/pbkit/pbkit
-source <(pb completions zsh)
-source <(pollapo completions zsh)
-
 # some aliases
 alias eixt="exit"
 alias exi="exit"
 alias ei="exit"
+alias xit="exit"
 alias zshrc="vi ~/.zshrc"
 alias vimrc="vi ~/.vimrc"
 alias kc="kubectx"
@@ -237,9 +167,5 @@ alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
 
-# git-extra: https://github.com/tj/git-extras
-. $(brew --prefix)/opt/git-extras/share/git-extras/git-extras-completion.zsh
-
-# python
-export PATH="/Users/jongho/Library/Python/3.8/bin:$PATH"
+echo "$(( $(gdate '+%s.%N')-$A )) seconds"
 
