@@ -85,6 +85,8 @@ plugins=(
     kubectl
 )
 
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
