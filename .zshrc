@@ -170,12 +170,13 @@ alias ga.="ga ."
 alias gdc="gdca"
 alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
-alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
+alias k9s="LC_CTYPE=en_US.UTF-8 k9s" # fix k9s ui bug
 alias cat="bat"
 
-set -o noclobber # keep files from unexpected redirection
+# keep files from unexpected redirection
+set -o noclobber
 
-# fzf
+# fzf: for interactive kubens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 echo "* Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
