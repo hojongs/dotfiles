@@ -152,6 +152,9 @@ source $HOME/.cargo/env
 # golang
 export PATH="$(go env GOPATH)/bin:$PATH"
 
+# java
+export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
+
 # some aliases
 alias eixt="exit"
 alias exi="exit"
@@ -168,6 +171,11 @@ alias gdc="gdca"
 alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias k9s="LC_CTYPE=en_US.UTF-8 k9s"
+
+set -o noclobber # keep files from unexpected redirection
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 echo "* Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 

@@ -390,3 +390,5 @@ set clipboard=unnamed
 
 set nu
 
+set rtp+=/opt/homebrew/opt/fzf
+
