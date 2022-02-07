@@ -74,16 +74,16 @@ HIST_STAMPS="yyyy-mm-dd"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     aws
-    git
+    git # gst
     gh
     zsh-syntax-highlighting
     zsh-autosuggestions
-    z
-    docker
-    docker-compose
+    z # z {dir}
+    docker # completion
+    docker-compose # dcup
     timer
-    kubectl
-    helm
+    kubectl # k for kubectl
+    helm # completion
 )
 
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=512
