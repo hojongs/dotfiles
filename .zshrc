@@ -83,6 +83,7 @@ plugins=(
     docker-compose
     timer
     kubectl
+    helm
 )
 
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=512
