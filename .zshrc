@@ -84,6 +84,7 @@ plugins=(
     timer
     kubectl # k for kubectl
     helm # completion
+    gradle
 )
 
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=512
@@ -179,6 +180,10 @@ set -o noclobber
 
 # fzf: for interactive kubens
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Color: echo -e "I ${RED}love${NC} Stack Overflow"
+RED='\033[0;31m'
+NC='\033[0m' # No Color
 
 echo "* Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 
