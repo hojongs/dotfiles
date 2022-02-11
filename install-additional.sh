@@ -198,39 +198,6 @@ then
     fi
 fi
 
-# z
-# https://github.com/rupa/z
-if ! command -v z &> /dev/null
-then
-    echo 'z not found. Install it'
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew install z
-    fi
-fi
-
-# jq : JSON processor
-# https://github.com/stedolan/jq
-if ! command -v jq &> /dev/null
-then
-    echo 'jq not found. Install it'
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew install jq
-    fi
-fi
-
-# fzf
-# https://github.com/junegunn/fzf
-if ! command -v fzf &> /dev/null
-then
-    echo 'fzf not found. Install it'
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew install fzf
-    fi
-fi
-
 # awscli
 if ! command -v aws &> /dev/null
 then
@@ -239,45 +206,6 @@ then
     then
         brew install awscli
     fi
-fi
-
-# rg : ripgrep
-# https://github.com/BurntSushi/ripgrep#installation
-if ! command -v rg &> /dev/null
-then
-    echo 'rg not found. Install it'
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew install ripgrep
-    fi
-fi
-
-# zsh-autosuggestions
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-autosuggestions
-if [[ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions" ]]
-then
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-fi
-
-# zsh-syntax-highlighting
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-syntax-highlighting
-if [[ ! -d "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting" ]]
-then
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-fi
-
-# zsh-navigation-tools : Ctrl-R
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-navigation-tools
-if [[ ! -d "$HOME/.config/znt/zsh-navigation-tools/" ]]
-then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zsh-navigation-tools/master/doc/install.sh)"
-fi
-
-# gradle-completion
-# https://github.com/gradle/gradle-completion
-if [[ ! -d "$HOME/.oh-my-zsh/plugins/gradle-completion" ]]
-then
-    git clone git://github.com/gradle/gradle-completion $HOME/.oh-my-zsh/plugins/gradle-completion
 fi
 
 # pbkit
@@ -291,64 +219,6 @@ then
     fi
 fi
 
-# amix/vimrc
-if [[ ! -d "$HOME/.vim_runtime" ]]
-then
-    git clone --depth=1 https://github.com/amix/vimrc.git $HOME/.vim_runtime
-    sh $HOME/.vim_runtime/install_basic_vimrc.sh
-fi
-
-# vim plugins
-VIM_PACK_ROOT=$HOME/.vim/pack
-# surround.vim
-VIM_PACK_SURROUND_ROOT=$VIM_PACK_ROOT/tpope/start/surround
-if [[ ! -d $VIM_PACK_SURROUND_ROOT ]]
-then
-    mkdir -p ~/.vim/pack/tpope/start
-    git clone https://tpope.io/vim/surround.git $VIM_PACK_SURROUND_ROOT
-    vim -u NONE -c "helptags surround/doc" -c q
-fi
-unset VIM_PACK_SURROUND_ROOT
-# repeat.vim
-VIM_PACK_REPEAT_ROOT=$VIM_PACK_ROOT/tpope/start/repeat
-if [[ ! -d $VIM_PACK_REPEAT_ROOT ]]
-then
-    mkdir -p ~/.vim/pack/tpope/start
-    git clone https://tpope.io/vim/repeat.git $VIM_PACK_REPEAT_ROOT
-fi
-unset VIM_PACK_REPEAT_ROOT
-# sensible.vim
-VIM_PACK_SENSIBLE_ROOT=$VIM_PACK_ROOT/tpope/start/sensible
-if [[ ! -d $VIM_PACK_SENSIBLE_ROOT ]]
-then
-    mkdir -p ~/.vim/pack/tpope/start
-    git clone https://tpope.io/vim/sensible.git $VIM_PACK_SENSIBLE_ROOT
-fi
-unset VIM_PACK_SENSIBLE_ROOT
-# Add more vim plugins here...
-unset VIM_PACK_ROOT
-
-
-if ! command -v git-extras &> /dev/null
-then
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew install git-extras
-    else
-        sudo apt-get install git-extras
-    fi
-fi
-
-if ! command -v starship &> /dev/null
-then
-    if [[ $ZSHRC_DIST = 'darwin' ]]
-    then
-        brew tap homebrew/cask-fonts
-        brew install --cask font-jetbrains-mono-nerd-font
-        brew install starship
-    fi
-fi
-
 if ! command -v watch &> /dev/null
 then
     if [[ $ZSHRC_DIST = 'darwin' ]]
@@ -356,3 +226,4 @@ then
         brew install watch
     fi
 fi
+

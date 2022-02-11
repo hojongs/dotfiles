@@ -8,11 +8,14 @@ Supported OS: Mac OS, WSL
 
 ```shell
 git clone git@github.com:hojongs/dotfiles.git $HOME/dotfiles
-source $HOME/dotfiles/install.sh # just once
+
+source $HOME/dotfiles/install-essential.sh
+
 ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig
 ln -s $HOME/dotfiles/.ideavimrc $HOME/.ideavimrc
 ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+mkdir -p $HOME/.config/gh
 ln -s $HOME/dotfiles/.config/gh/config.yml $HOME/.config/gh/config.yml 
 ```
 
