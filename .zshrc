@@ -66,6 +66,7 @@ HIST_STAMPS="yyyy-mm-dd"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh-custom/
 
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
@@ -86,9 +87,10 @@ plugins=(
     helm # completion
     gradle
     brew # aliases
+    fzf # find installation & enable
 )
 
-export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=512
+export FZF_BASE=$(brew --prefix)/opt/fzf
 
 source $ZSH/oh-my-zsh.sh
 
@@ -180,9 +182,6 @@ alias cat="bat"
 
 # keep files from unexpected redirection
 set -o noclobber
-
-# fzf: for interactive kubens
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Color: echo -e "I ${RED}love${NC} Stack Overflow"
 RED='\033[0;31m'
