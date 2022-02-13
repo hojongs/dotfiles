@@ -85,6 +85,7 @@ plugins=(
     kubectl # k for kubectl
     helm # completion
     gradle
+    brew # aliases
 )
 
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=512
