@@ -120,8 +120,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias gdate=date
-
 START_TIME=$(gdate '+%s.%3N')
 if [[ $OSTYPE =~ "^darwin" ]]
 then
@@ -130,6 +128,7 @@ then
 else
     # WSL Ubuntu
     ZSHRC_DIST="linux"
+    alias gdate=date
 fi
 
 HOME_BIN="$HOME/bin"
