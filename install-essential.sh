@@ -41,7 +41,7 @@ then
     echo "${RED}jq not found. Install it"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        BREW_FORMULAE+=jq
+        BREW_FORMULAE+=" jq"q
     else
         echo "${RED}jq TBD"
     fi
@@ -54,7 +54,7 @@ then
     echo "${RED}rg not found. Install it"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        BREW_FORMULAE+=ripgrep
+        BREW_FORMULAE+=" ripgrep"
     else
         echo "${RED}ripgrep TBD"
     fi
@@ -67,7 +67,7 @@ then
     echo "${RED}fzf not found. Install it"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        BREW_FORMULAE+=fzf
+        BREW_FORMULAE+=" fzf"
     else
         echo "${RED}fzf TBD"
     fi
@@ -110,5 +110,10 @@ unset VIM_PACK_SENSIBLE_ROOT
 # Add more vim plugins here...
 unset VIM_PACK_ROOT
 
-brew install $BREW_FORMULAE
+if [[ $BREW_FORMULAE ]]
+then
+    brew install $BREW_FORMULAE
+else
+    echo "${BLUE}All homebrew formulae installed."
+fi
 

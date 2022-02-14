@@ -184,8 +184,10 @@ alias cat="bat"
 set -o noclobber
 
 # Color: echo -e "I ${RED}love${NC} Stack Overflow"
+# https://stackoverflow.com/a/5947802/12956829
 RED='\033[0;31m'
+BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-echo "* Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
+echo "${BLUE}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 
