@@ -176,6 +176,7 @@ alias ga.="ga ."
 alias gdc="gdca"
 alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
+alias gsui="gsu --init"
 alias k9s="LC_CTYPE=en_US.UTF-8 k9s" # fix k9s ui bug
 alias cat="bat"
 
