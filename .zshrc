@@ -146,7 +146,7 @@ source $ZSH_HIDDEN_PATH
 if [[ $ZSHRC_DIST = 'darwin' ]]
 then
     source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
-    PS1='$(kube_ps1)'$PS1
+    [[ $? = 0 ]] && PS1='$(kube_ps1)'$PS1
 else
     source $HOME/.zshrc_home/kube-ps1/kube-ps1.sh
 fi
