@@ -185,9 +185,15 @@ set -o noclobber
 
 # Color: echo -e "I ${RED}love${NC} Stack Overflow"
 # https://stackoverflow.com/a/5947802/12956829
+BLACK='\033[0;30m'
 RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
 BLUE='\033[0;34m'
+
+DARK_GRAY='\033[1;30m'
+YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-echo "${BLUE}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
+echo "${YELLOW}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 
