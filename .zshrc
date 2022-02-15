@@ -100,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8 # for git, GitKraken and others
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -177,7 +178,6 @@ alias gdc="gdca"
 alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias gsui="gsu --init"
-alias k9s="LC_CTYPE=en_US.UTF-8 k9s" # fix k9s ui bug
 alias cat="bat"
 
 # keep files from unexpected redirection
