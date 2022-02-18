@@ -27,6 +27,8 @@ then
     touch $ZSH_HIDDEN_PATH
 fi
 
+git submodule update --init
+
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 

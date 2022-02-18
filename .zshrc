@@ -90,7 +90,11 @@ plugins=(
     fzf # find installation & enable
 )
 
-export FZF_BASE=$(brew --prefix)/opt/fzf
+if [[ $OSTYPE =~ "^darwin" ]]
+then
+    export FZF_BASE=$(brew --prefix)/opt/fzf
+else
+fi
 
 source $ZSH/oh-my-zsh.sh
 
@@ -121,7 +125,6 @@ export LANG=en_US.UTF-8 # for git, GitKraken and others
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-START_TIME=$(gdate '+%s.%3N')
 if [[ $OSTYPE =~ "^darwin" ]]
 then
     # Mac OS
@@ -131,6 +134,7 @@ else
     ZSHRC_DIST="linux"
     alias gdate=date
 fi
+START_TIME=$(gdate '+%s.%3N')
 
 HOME_BIN="$HOME/bin"
 ZSH_HOME_PATH="$HOME/.zshrc_home"
