@@ -30,7 +30,20 @@ fi
 git submodule update --init
 
 # oh-my-zsh
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install zsh
+else
+    sudo apt-get install zsh
+fi
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# vim clipboard
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+else
+    sudo apt-get install vim-gtk3 -y
+fi
 
 # gh: GitHub CLI
 if ! command -v gh &> /dev/null

@@ -4,13 +4,6 @@ This my dotfiles to setup my own development environment automatically
 
 Supported OS: Mac OS, WSL
 
-## Prerequisite
-
-- Install Zsh
-  ```sh
-  sudo apt-get install zsh
-  ```
-
 ## How to use
 
 ```shell
