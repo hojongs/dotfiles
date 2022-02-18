@@ -27,12 +27,8 @@ then
     touch $ZSH_HIDDEN_PATH
 fi
 
-# zsh-navigation-tools : Ctrl-R
-# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/zsh-navigation-tools
-if [[ ! -d "$HOME/.config/znt/zsh-navigation-tools/" ]]
-then
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/psprint/zsh-navigation-tools/master/doc/install.sh)"
-fi
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # jq : JSON processor
 # https://github.com/stedolan/jq
