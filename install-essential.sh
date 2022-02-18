@@ -41,9 +41,9 @@ then
     echo "${RED}jq not found. Install it"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        BREW_FORMULAE+=" jq"q
+        BREW_FORMULAE+=" jq"
     else
-        echo "${RED}jq TBD"
+        sudo apt-get install jq
     fi
 fi
 
@@ -56,7 +56,20 @@ then
     then
         BREW_FORMULAE+=" ripgrep"
     else
-        echo "${RED}ripgrep TBD"
+        sudo apt-get install ripgrep
+    fi
+fi
+
+# fd
+# https://github.com/sharkdp/fd
+if ! command -v fd &> /dev/null
+then
+    echo "${RED}fd not found. Install it"
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        BREW_FORMULAE+=" fd"
+    else
+        sudo apt install fd-find
     fi
 fi
 
@@ -69,7 +82,7 @@ then
     then
         BREW_FORMULAE+=" fzf"
     else
-        echo "${RED}fzf TBD"
+        sudo apt-get install fzf
     fi
 fi
 
