@@ -113,6 +113,19 @@ then
     fi
 fi
 
+# fd for fzf
+# https://github.com/sharkdp/fd
+if ! command -v fzf &> /dev/null
+then
+    echo "${RED}fd not found. Install it"
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        BREW_FORMULAE+=" fd"
+    else
+        sudo apt-get install fd-find
+    fi
+fi
+
 # amix/vimrc
 if [[ ! -d "$HOME/.vim_runtime" ]]
 then

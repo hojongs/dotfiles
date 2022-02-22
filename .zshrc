@@ -87,7 +87,7 @@ plugins=(
     helm # completion
     gradle
     brew # aliases
-    fzf # find installation & enable
+    fzf # key binding
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
