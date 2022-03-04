@@ -204,5 +204,14 @@ export PATH="/opt/homebrew/bin:$PATH"
 # poetry
 export PATH="/Users/jongho/Library/Python/3.9/bin:$PATH"
 
+# python
+alias pip3='noglob pip3'
+alias pip='noglob pip'
+
 echo "${YELLOW}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
+
+# pollapo-go autocompletion
+PROG=pollapo-go
+_CLI_ZSH_AUTOCOMPLETE_HACK=1
+. $HOME/.config/pollapo-go/zsh_autocomplete
 
