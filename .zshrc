@@ -85,7 +85,6 @@ plugins=(
     timer
     kubectl # k for kubectl
     helm # completion
-    gradle
     brew # aliases
     fzf # key binding
 )
@@ -182,7 +181,6 @@ alias gdc="gdca"
 alias gdta="git describe --tags --abbrev=4"
 alias gpot="git push origin && git push origin --tags"
 alias gsui="gsu --init"
-alias cat="bat"
 
 # keep files from unexpected redirection
 set -o noclobber
