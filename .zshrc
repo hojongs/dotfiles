@@ -209,7 +209,10 @@ alias pip='noglob pip'
 echo "${YELLOW}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 
 # pollapo-go autocompletion
-PROG=pollapo-go
-_CLI_ZSH_AUTOCOMPLETE_HACK=1
-. $HOME/.config/pollapo-go/zsh_autocomplete
+if [[ -f $HOME/.config/pollapo-go/zsh_autocomplete ]]
+then
+    PROG=pollapo-go
+    _CLI_ZSH_AUTOCOMPLETE_HACK=1
+    . $HOME/.config/pollapo-go/zsh_autocomplete
+fi
 

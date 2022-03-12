@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 if [[ $OSTYPE =~ "^darwin" ]]
 then
     # Mac OS
@@ -36,7 +37,6 @@ then
 else
     sudo apt-get install zsh
 fi
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # vim clipboard
 if [[ $ZSHRC_DIST = 'darwin' ]]
@@ -163,10 +163,13 @@ unset VIM_PACK_SENSIBLE_ROOT
 # Add more vim plugins here...
 unset VIM_PACK_ROOT
 
-if [[ $BREW_FORMULAE ]]
+if [[ $ZSHRC_DIST = 'darwin' ]]
 then
-    brew install $BREW_FORMULAE
-else
-    echo "${BLUE}All homebrew formulae installed."
+    if  [[ $BREW_FORMULAE ]]
+    then
+        brew install $BREW_FORMULAE
+    else
+        echo "${BLUE}All homebrew formulae installed."
+    fi
 fi
 
