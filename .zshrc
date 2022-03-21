@@ -87,6 +87,7 @@ plugins=(
     helm # completion
     brew # aliases
     fzf # key binding
+    npm # completion, aliases
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
