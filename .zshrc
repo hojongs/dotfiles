@@ -142,6 +142,7 @@ ZSH_HIDDEN_PATH="$HOME/.zshrc-hidden"
 
 # home bin
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/dotfiles/bin:$PATH"
 
 # my .zshrc-hidden
 source $ZSH_HIDDEN_PATH
