@@ -13,4 +13,3 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --follow --exclude ".git" --exclude "Library" . "$1"
 }
-

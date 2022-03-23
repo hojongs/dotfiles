@@ -217,4 +217,3 @@ then
     _CLI_ZSH_AUTOCOMPLETE_HACK=1
     . $HOME/.config/pollapo-go/zsh_autocomplete
 fi
-

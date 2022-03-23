@@ -187,4 +187,3 @@ then
         echo "${BLUE}All homebrew formulae installed."
     fi
 fi
-

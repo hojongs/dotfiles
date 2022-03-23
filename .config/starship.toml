@@ -7,4 +7,3 @@ disabled = false
 "dev.local.cluster.k8s" = "dev"
 ".*/openshift-cluster/.*" = "openshift"
 "gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
-
