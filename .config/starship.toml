@@ -1,9 +1,53 @@
 right_format = "$kubernetes"
 
 [kubernetes]
-format = 'on [⛵ $context \($namespace\)](dimmed green) '
+symbol = "k8s:"
 disabled = false
-[kubernetes.context_aliases]
-"dev.local.cluster.k8s" = "dev"
-".*/openshift-cluster/.*" = "openshift"
-"gke_.*_(?P<cluster>[\\w-]+)" = "gke-$cluster"
+
+[java]
+# disabled = true
+symbol = "java:"
+style = "bold green"
+format = "[${symbol}(${version} )]($style)"
+
+[aws]
+symbol = 'aws:'
+format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = "branch:"
+only_attached = true
+format = "[$symbol$branch]($style) "
+
+[git_commit]
+tag_disabled = false # doesn't work
+
+[git_status]
+disabled = true
+
+[git_metrics]
+disabled = false
+
+[kotlin]
+disabled = true
+symbol = "kt:"
+
+[docker_context]
+disabled = true
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+style = "bold green"
+format = "[$duration]($style) "
+
+[python]
+symbol = "python:"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[golang]
+symbol = "go:"
+format = "[$symbol($version )]($style)"
