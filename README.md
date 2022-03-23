@@ -13,6 +13,9 @@ $HOME/dotfiles/init-essential.sh
 $HOME/dotfiles/init-symlink.sh
 ```
 
+iTerm -> Preference: Load preferences from a custom folder or URL
+`$HOME/dotfiles/iterm`
+
 ## Github Action Utils
 
 https://github.com/nektos/act
