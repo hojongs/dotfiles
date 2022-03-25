@@ -3,6 +3,7 @@ right_format = "$kubernetes"
 [kubernetes]
 symbol = "k8s:"
 disabled = false
+style = "bold red"
 format = '[$symbol$context( \($namespace\))]($style)'
 
 [java]
