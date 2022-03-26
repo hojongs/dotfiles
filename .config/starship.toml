@@ -47,8 +47,10 @@ style = "bold green"
 format = "[$duration]($style) "
 
 [python]
-symbol = "python:"
+symbol = "py:"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = false
+python_binary = ["python3", "python", "python2"]
 
 [golang]
 symbol = "go:"
