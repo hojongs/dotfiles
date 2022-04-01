@@ -55,3 +55,12 @@ python_binary = ["python3", "python", "python2"]
 [golang]
 symbol = "go:"
 format = "[$symbol($version )]($style)"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+symbol = "node "
+
+[package]
+format = "[$symbol$version]($style) "
+symbol = "pkg "
+
