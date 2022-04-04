@@ -6,15 +6,28 @@ Supported OS: Mac OS, WSL
 
 ## How to use
 
+## Common
+
 ```shell
 git clone git@github.com:hojongs/dotfiles.git $HOME/dotfiles
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 $HOME/dotfiles/init-essential.sh
 $HOME/dotfiles/init-symlink.sh
 ```
 
+## POSIX
+
+```shell
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 iTerm -> Preference: Load preferences from a custom folder or URL
 `$HOME/dotfiles/iterm`
+
+## Windows
+
+```shell
+
+```
 
 ## Github Action Utils
 
