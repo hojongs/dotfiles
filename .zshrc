@@ -88,6 +88,7 @@ plugins=(
     brew # aliases
     fzf # key binding
     npm # completion, aliases
+    terraform # tf
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
@@ -215,3 +216,4 @@ then
 fi
 
 eval "$(starship init zsh)"
+

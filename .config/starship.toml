@@ -25,7 +25,9 @@ only_attached = true
 format = "[$symbol$branch]($style) "
 
 [git_commit]
-tag_disabled = false # doesn't work
+# tag_disabled = false # doesn't work
+only_detached = false
+format = "[\\($hash$tag\\)]($style) "
 
 [git_status]
 disabled = true
@@ -63,4 +65,8 @@ symbol = "node "
 [package]
 format = "[$symbol$version]($style) "
 symbol = "pkg "
+
+[terraform]
+symbol = "tf"
+format = "[$symbol:$workspace]($style) "
 
