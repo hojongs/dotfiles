@@ -126,17 +126,6 @@ export LANG=en_US.UTF-8 # for git, GitKraken and others
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-if [[ $OSTYPE =~ "^darwin" ]]
-then
-    # Mac OS
-    ZSHRC_DIST="darwin"
-else
-    # WSL Ubuntu
-    ZSHRC_DIST="linux"
-    alias gdate=date
-fi
-START_TIME=$(gdate '+%s.%3N')
-
 HOME_BIN="$HOME/bin"
 ZSH_HOME_PATH="$HOME/.zshrc_home"
 ZSH_HIDDEN_PATH="$HOME/.zshrc-hidden"
@@ -150,20 +139,27 @@ source $ZSH_HIDDEN_PATH
 
 # kube-ps1
 # https://github.com/jonmosco/kube-ps1
-if [[ $ZSHRC_DIST = 'darwin' ]]
-then
-    source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
-    [[ $? = 0 ]] && PS1='$(kube_ps1)'$PS1
-else
-    source $HOME/.zshrc_home/kube-ps1/kube-ps1.sh
+
+if command -v kubeoff &> /dev/null; then
+    if [[ $ZSHRC_DIST = 'darwin' ]]
+    then
+        source "$(brew --prefix)/opt/kube-ps1/share/kube-ps1.sh" 2> /dev/null
+        [[ $? = 0 ]] && PS1='$(kube_ps1)'$PS1
+    else
+        source $HOME/.zshrc_home/kube-ps1/kube-ps1.sh
+    fi
+    kubeoff
 fi
-kubeoff
 
 # Rust
-source $HOME/.cargo/env
+if [[ -f $HOME/.cargo/env ]]; then
+    source $HOME/.cargo/env
+fi
 
 # golang
-export PATH="$(go env GOPATH)/bin:$PATH"
+if command -v go &> /dev/null; then
+    export PATH="$(go env GOPATH)/bin:$PATH"
+fi
 
 # java
 export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"
@@ -204,8 +200,6 @@ NC='\033[0m' # No Color
 alias pip3='noglob pip3'
 alias pip='noglob pip'
 alias python='python3'
-
-echo "${YELLOW}Elapsed time to init zsh: $( bc <<< $(gdate '+%s.%3N')-$START_TIME ) seconds"
 
 # pollapo-go autocompletion
 if [[ -f $HOME/.config/pollapo-go/zsh_autocomplete ]]

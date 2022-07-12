@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -uxo pipefail
 
 # git config
 ln -s $HOME/dotfiles/.gitconfig $HOME/.gitconfig

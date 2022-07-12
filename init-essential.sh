@@ -1,5 +1,19 @@
 #!/usr/bin/env bash
-if [[ $OSTYPE =~ "^darwin" ]]
+set -euxo pipefail
+
+# Color: echo -e "I ${RED}love${NC} Stack Overflow"
+# https://stackoverflow.com/a/5947802/12956829
+BLACK='\033[0;30m'
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+ORANGE='\033[0;33m'
+BLUE='\033[0;34m'
+
+DARK_GRAY='\033[1;30m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+if [[ $OSTYPE =~ ^darwin ]]
 then
     # Mac OS
     ZSHRC_DIST="darwin"
@@ -41,6 +55,7 @@ fi
 # vim clipboard
 if [[ $ZSHRC_DIST = 'darwin' ]]
 then
+    brew install vim
 else
     sudo apt-get install vim-gtk3 -y
 fi
@@ -48,7 +63,7 @@ fi
 # gh: GitHub CLI
 if ! command -v gh &> /dev/null
 then
-    echo "${RED}gh not found. Install it"
+    echo "${RED}gh not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" gh"
@@ -65,7 +80,7 @@ fi
 # https://github.com/stedolan/jq
 if ! command -v jq &> /dev/null
 then
-    echo "${RED}jq not found. Install it"
+    echo "${RED}jq not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" jq"
@@ -78,7 +93,7 @@ fi
 # https://github.com/BurntSushi/ripgrep#installation
 if ! command -v rg &> /dev/null
 then
-    echo "${RED}rg not found. Install it"
+    echo "${RED}rg not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" ripgrep"
@@ -91,7 +106,7 @@ fi
 # https://github.com/sharkdp/fd
 if ! command -v fd &> /dev/null
 then
-    echo "${RED}fd not found. Install it"
+    echo "${RED}fd not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" fd"
@@ -104,7 +119,7 @@ fi
 # https://github.com/junegunn/fzf
 if ! command -v fzf &> /dev/null
 then
-    echo "${RED}fzf not found. Install it"
+    echo "${RED}fzf not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" fzf"
@@ -117,7 +132,7 @@ fi
 # https://github.com/sharkdp/fd
 if ! command -v fzf &> /dev/null
 then
-    echo "${RED}fd not found. Install it"
+    echo "${RED}fd not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" fd"
@@ -130,7 +145,7 @@ fi
 # https://github.com/so-fancy/diff-so-fancy
 if ! command -v diff-so-fancy &> /dev/null
 then
-    echo "${RED}diff-so-fancy not found. Install it"
+    echo "${RED}diff-so-fancy not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
         BREW_FORMULAE+=" diff-so-fancy"
@@ -187,3 +202,28 @@ then
         echo "${BLUE}All homebrew formulae installed."
     fi
 fi
+
+# tree
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install tree
+else
+    sudo apt-get install tree
+fi
+
+# dos2unix
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install dos2unix
+else
+    sudo apt-get install dos2unix
+fi
+
+# starship
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install starship
+else
+    sudo apt-get install starship
+fi
+
