@@ -141,18 +141,16 @@ then
     fi
 fi
 
-# diff-so-fancy: alternative to diff, git diff
-# https://github.com/so-fancy/diff-so-fancy
-if ! command -v diff-so-fancy &> /dev/null
+# delta
+if ! command -v delta &> /dev/null
 then
-    echo "${RED}diff-so-fancy not found. Install it$NC"
+    echo "${RED}delta not found. Install it$NC"
     if [[ $ZSHRC_DIST = 'darwin' ]]
     then
-        BREW_FORMULAE+=" diff-so-fancy"
+        BREW_FORMULAE+=" git-delta"
     else
-        sudo add-apt-repository ppa:aos1/diff-so-fancy && \
-          sudo apt-get update && \
-          sudo apt-get install diff-so-fancy
+        echo "${RED}https://dandavison.github.io/delta/installation.html$NC"
+        echo "${RED}dpkg -i file.deb$NC"
     fi
 fi
 
