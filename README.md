@@ -29,3 +29,13 @@ cp -r Library/KeyBindings/ $HOME/
 iTerm -> Preference: Load preferences from a custom folder or URL
 `$HOME/dotfiles/iterm`
 
+## Intellij
+
+### Plugins
+
+- Nyan Progress Bar
+- IdeaVim
+- Key Promoter X
+- GitToolBox
+- .ignore
+

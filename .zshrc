@@ -211,3 +211,9 @@ fi
 
 eval "$(starship init zsh)"
 
+if ! command -v docker &> /dev/null; then
+    if command -v lima &> /dev/null; then
+        alias docker="lima nerdctl"
+    fi
+fi
+
