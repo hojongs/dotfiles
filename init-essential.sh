@@ -225,3 +225,11 @@ else
     sudo apt-get install starship
 fi
 
+# bat
+if [[ $ZSHRC_DIST = 'darwin' ]]
+then
+    brew install bat
+else
+    sudo apt-get install bat
+fi
+
