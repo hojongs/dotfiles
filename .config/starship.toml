@@ -70,3 +70,7 @@ symbol = "pkg "
 symbol = "tf"
 format = "[$symbol:$workspace]($style) "
 
+[ruby]
+symbol = "rb "
+format = "[$symbol($version )]($style)"
+
