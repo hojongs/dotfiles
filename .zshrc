@@ -217,3 +217,6 @@ if ! command -v docker &> /dev/null; then
     fi
 fi
 
+# gitignore.io: https://www.toptal.com/developers/gitignore
+function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+
