@@ -20,7 +20,7 @@ format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
 disabled = true
 
 [git_branch]
-symbol = "branch:"
+symbol = ""
 only_attached = true
 format = "[$symbol$branch]($style) "
 
