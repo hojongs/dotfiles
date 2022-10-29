@@ -7,12 +7,12 @@ style = "bold red"
 format = '[$symbol$context( \($namespace\))]($style)'
 
 [java]
-# disabled = true
 symbol = "java:"
 style = "bold green"
 format = "[${symbol}(${version} )]($style)"
 
 [aws]
+disabled = true
 symbol = 'aws:'
 format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
 
@@ -49,20 +49,24 @@ style = "bold green"
 format = "[$duration]($style) "
 
 [python]
+disabled = true
 symbol = "py:"
 format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
 pyenv_version_name = false
 python_binary = ["python3", "python", "python2"]
 
 [golang]
+disabled = true
 symbol = "go:"
 format = "[$symbol($version )]($style)"
 
 [nodejs]
+disabled = true
 format = "[$symbol($version )]($style)"
 symbol = "node "
 
 [package]
+disabled = false
 format = "[$symbol$version]($style) "
 symbol = "pkg "
 
