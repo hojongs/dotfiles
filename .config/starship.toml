@@ -25,6 +25,7 @@ only_attached = true
 format = "[$symbol$branch]($style) "
 
 [git_commit]
+disabled = true
 # tag_disabled = false # doesn't work
 only_detached = false
 format = "[\\($hash$tag\\)]($style) "
@@ -33,7 +34,7 @@ format = "[\\($hash$tag\\)]($style) "
 disabled = true
 
 [git_metrics]
-disabled = false
+disabled = true
 
 [kotlin]
 disabled = true
