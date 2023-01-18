@@ -227,3 +227,6 @@ export NVM_DIR="$HOME/.nvm"
 
 alias diff='delta'
 
+# rbenv (ruby)
+eval "$(rbenv init - zsh)"
+
