@@ -62,7 +62,7 @@ symbol = "go:"
 format = "[$symbol($version )]($style)"
 
 [nodejs]
-disabled = true
+disabled = false
 format = "[$symbol($version )]($style)"
 symbol = "node "
 
