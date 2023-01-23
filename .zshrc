@@ -89,6 +89,8 @@ plugins=(
     fzf # key binding
     npm # completion, aliases
     terraform # tf
+    bundler
+    rust
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
