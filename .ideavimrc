@@ -5,3 +5,8 @@ set smartcase # When 'ignorecase' and 'smartcase' are both on, if a pattern cont
 set surround
 set clipboard=unnamed
 set clipboard+=ideaput
+
+# https://superuser.com/a/677312
+set visualbell
+set noerrorbells
+
