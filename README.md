@@ -4,18 +4,20 @@ This my dotfiles to setup my own development environment automatically
 
 Supported OS: Mac OS, WSL (Except of Windows)
 
+# How to use
+
+```shell
+git clone git@github.com:hojongs/dotfiles.git $HOME/dotfiles
+$HOME/dotfiles/init-essential.sh
+$HOME/dotfiles/init-symlink.sh
+```
+
 ## Common
 
 ### Oh My Zsh
 
 ```sh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-```shell
-git clone git@github.com:hojongs/dotfiles.git $HOME/dotfiles
-$HOME/dotfiles/init-essential.sh
-$HOME/dotfiles/init-symlink.sh
 ```
 
 ## POSIX

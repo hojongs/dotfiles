@@ -19,3 +19,6 @@ mkdir -p $HOME/.config/gh && \
 
 # starship
 ln -s $HOME/dotfiles/.config/starship.toml $HOME/.config/starship.toml
+
+echo 'FINISH!'
+

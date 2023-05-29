@@ -74,23 +74,23 @@ ZSH_CUSTOM=$HOME/dotfiles/oh-my-zsh-custom/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-    aws
+    # aws
     git # gst
-    gh
+    # gh
     zsh-syntax-highlighting
     zsh-autosuggestions
     z # z {dir}
-    docker # completion
-    docker-compose # dcup
+    # docker # completion
+    # docker-compose # dcup
     # timer # replaced with starship
-    kubectl # k for kubectl
-    helm # completion
+    # kubectl # k for kubectl
+    # helm # completion
     brew # aliases
     fzf # key binding
-    npm # completion, aliases
-    terraform # tf
-    bundler
-    rust
+    # npm # completion, aliases
+    # terraform # tf
+    # bundler
+    # rust
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
@@ -211,7 +211,9 @@ then
     . $HOME/.config/pollapo-go/zsh_autocomplete
 fi
 
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi
 
 if ! command -v docker &> /dev/null; then
     if command -v lima &> /dev/null; then
@@ -235,5 +237,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # rbenv (ruby)
-eval "$(rbenv init - zsh)"
+if command -v rbenv &> /dev/null; then
+    eval "$(rbenv init - zsh)"
+fi
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
