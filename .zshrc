@@ -86,12 +86,13 @@ plugins=(
     # timer # replaced with starship
     # kubectl # k for kubectl
     # helm # completion
-    brew # aliases
+    # brew # aliases
     fzf # key binding
     # npm # completion, aliases
     # terraform # tf
     # bundler
     # rust
+    # mvn # maven
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
@@ -179,10 +180,6 @@ alias kn="kubens"
 alias kd="kubectl describe"
 alias kg="kubectl get"
 alias ga.="ga ."
-alias gdc="gdca"
-alias gdta="git describe --tags --abbrev=4"
-alias gpot="git push origin && git push origin --tags"
-alias gsui="gsu --init"
 
 # keep files from unexpected redirection
 set -o noclobber
@@ -244,3 +241,4 @@ fi
 
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
