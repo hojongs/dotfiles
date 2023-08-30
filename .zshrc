@@ -93,6 +93,7 @@ plugins=(
     # bundler
     # rust
     # mvn # maven
+    jira
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
