@@ -94,6 +94,7 @@ plugins=(
     # rust
     # mvn # maven
     jira
+    asdf
 )
 
 if [[ $OSTYPE =~ "^darwin" ]]
@@ -243,3 +244,6 @@ fi
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
+
+. ~/.asdf/plugins/java/set-java-home.zsh
+
