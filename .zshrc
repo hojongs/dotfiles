@@ -247,3 +247,6 @@ export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
 
 . ~/.asdf/plugins/java/set-java-home.zsh
 
+alias vi=nvim
+alias vim=nvim
+
