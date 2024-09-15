@@ -1,0 +1,9 @@
+{{ if eq .chezmoi.os "windows" -}}
+winget install Neovim.Neovim
+
+winget install --accept-source-agreements chocolatey.chocolatey
+choco install -y neovim git ripgrep wget fd unzip gzip mingw make
+
+winget install Neovim.Neovim
+{{ end -}}
+

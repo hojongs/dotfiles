@@ -1,0 +1,8 @@
+[user]
+	name = Jongho Jeon
+	email = hojong.jjh@gmail.com
+[credential "https://github.com"]
+	helper = !$(which gh) auth git-credential
+[credential "https://gist.github.com"]
+	helper = !$(which gh) auth git-credential
+

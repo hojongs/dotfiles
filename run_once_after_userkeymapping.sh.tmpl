@@ -1,0 +1,8 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+
+sudo launchctl remove userkeymapping
+sudo chown root ~/bin/userkeymapping.plist
+sudo launchctl load ~/bin/userkeymapping.plist
+{{ end -}}
+

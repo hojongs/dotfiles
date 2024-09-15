@@ -1,0 +1,14 @@
+README.md
+.oh-my-zsh/cache
+
+{{ if ne .chezmoi.os "windows" }}
+# only for windows
+AppData/
+{{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+# only for darwin
+Library/
+.hammerspoon/
+{{ end }}
+

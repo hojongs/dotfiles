@@ -1,0 +1,81 @@
+right_format = "$kubernetes"
+
+[kubernetes]
+symbol = "k8s:"
+disabled = false
+style = "bold red"
+format = '[$symbol$context( \($namespace\))]($style)'
+
+[java]
+symbol = "java:"
+style = "bold green"
+format = "[${symbol}(${version} )]($style)"
+
+[aws]
+disabled = true
+symbol = 'aws:'
+format = '[$symbol($profile )(\($region\) )(\[$duration\])]($style)'
+
+[gcloud]
+disabled = true
+
+[git_branch]
+symbol = ""
+only_attached = true
+format = "[$symbol$branch]($style) "
+
+[git_commit]
+disabled = true
+# tag_disabled = false # doesn't work
+only_detached = false
+format = "[\\($hash$tag\\)]($style) "
+
+[git_status]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[kotlin]
+disabled = true
+symbol = "kt:"
+
+[docker_context]
+disabled = true
+
+[cmd_duration]
+min_time = 0
+show_milliseconds = true
+style = "bold green"
+format = "[$duration]($style) "
+
+[python]
+disabled = true
+symbol = "py:"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+pyenv_version_name = false
+python_binary = ["python3", "python", "python2"]
+
+[golang]
+disabled = true
+symbol = "go:"
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+disabled = false
+format = "[$symbol($version )]($style)"
+symbol = "node "
+
+[package]
+disabled = false
+format = "[$symbol$version]($style) "
+symbol = "pkg "
+
+[terraform]
+symbol = "tf"
+format = "[$symbol:$workspace]($style) "
+
+[ruby]
+symbol = "rb "
+format = "[$symbol($version )]($style)"
+

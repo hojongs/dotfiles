@@ -1,0 +1,10 @@
+#!/bin/sh
+# map right cmd -> f19
+# map capslock -> left ctrl
+hidutil property --set '{
+	"UserKeyMapping":[
+		{"HIDKeyboardModifierMappingSrc":0x7000000e7,"HIDKeyboardModifierMappingDst":0x70000006e},
+		{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x7000000e0}
+	]
+}'
+
