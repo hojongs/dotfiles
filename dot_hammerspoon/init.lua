@@ -1,3 +1,7 @@
+hs.hotkey.bind({ "cmd", "alt", "ctrl" }, "W", function()
+	hs.alert.show("Hello World!")
+end)
+
 local function pressFn(mods, key)
 	if key == nil then
 		key = mods
