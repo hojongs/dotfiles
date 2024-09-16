@@ -1,4 +1,11 @@
-{{ if ne .chezmoi.os "windows" -}}
+{{ if eq .chezmoi.os "windows" -}}
+["nvim"]
+    type = "git-repo"
+    url = "https://github.com/hojongs/kickstart.nvim.git"
+{{ else -}}
+[".config/nvim"]
+    type = "git-repo"
+    url = "https://github.com/hojongs/kickstart.nvim.git"
 [".oh-my-zsh"]
     type = "archive"
     url = "https://github.com/ohmyzsh/ohmyzsh/archive/master.tar.gz"
@@ -17,14 +24,5 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
-[".config/nvim"]
-    type = "git-repo"
-    url = "https://github.com/nvim-lua/kickstart.nvim.git"
-{{ end -}}
-
-{{ if eq .chezmoi.os "windows" -}}
-["nvim"]
-    type = "git-repo"
-    url = "https://github.com/nvim-lua/kickstart.nvim.git"
 {{ end -}}
 
