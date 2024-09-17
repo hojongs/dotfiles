@@ -1,0 +1,17 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+brew install yazi
+{{ end -}}
+
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/bash
+
+PACKAGE_NAME="git-delta-musl_0.18.2_amd64.deb"
+TEMP_DIR=$(mktemp -d)
+
+curl -L -o "$TEMP_DIR/$PACKAGE_NAME" https://github.com/dandavison/delta/releases/download/0.18.2/git-delta-musl_0.18.2_amd64.deb
+sudo dpkg -i "$TEMP_DIR/$PACKAGE_NAME"
+
+{{ end -}}
+
