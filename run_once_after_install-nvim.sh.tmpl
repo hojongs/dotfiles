@@ -1,6 +1,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 brew install git ripgrep
+brew install neovim
 {{ end -}}
 {{ if eq .chezmoi.os "linux" -}}
 #!/usr/bin/env bash
@@ -8,6 +9,5 @@ brew install git ripgrep
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
 sudo apt install make gcc ripgrep unzip git xclip neovim
-
-brew install neovim
 {{ end -}}
+
