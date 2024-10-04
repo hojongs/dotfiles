@@ -1,5 +1,3 @@
-[includeIf "gitdir:~/Users/jongho.jeon/"]
-    path = ~/.gitconfig-work
 [init]
     defaultBranch = main
 [user]
@@ -11,6 +9,8 @@
     # autocrlf: https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings#about-line-endings
     autocrlf = input
     eol = lf
+[push]
+	autoSetupRemote = true
 [pull]
     ff = only
 [credential "https://github.com"]
@@ -32,4 +32,6 @@
     colorMoved = default
 [alias]
     gone = ! git fetch -p && git for-each-ref --format '%(refname:short) %(upstream:track)' | awk '$2 == \"[gone]\" {print $1}' | xargs -r git branch -D
+[includeIf "gitdir:/Users/jongho.jeon/repos/"]
+    path = ~/.gitconfig-work
 
