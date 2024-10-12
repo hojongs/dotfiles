@@ -1,8 +1,10 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/usr/bin/env bash
 
+DIR=$(chezmoi source-path)
+
 sudo launchctl remove userkeymapping
-sudo chown root ./hidutil-userkeymapping.plist
-sudo launchctl load ./hidutil-userkeymapping.plist
+sudo chown root $DIR/hidutil-userkeymapping.plist
+sudo launchctl load $DIR/hidutil-userkeymapping.plist
 {{ end -}}
 
