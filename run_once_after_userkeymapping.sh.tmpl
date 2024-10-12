@@ -2,7 +2,7 @@
 #!/usr/bin/env bash
 
 sudo launchctl remove userkeymapping
-sudo chown root ~/bin/userkeymapping.plist
-sudo launchctl load ~/bin/userkeymapping.plist
+sudo chown root ./hidutil-userkeymapping.plist
+sudo launchctl load ./hidutil-userkeymapping.plist
 {{ end -}}
 
