@@ -10,7 +10,6 @@
     "**/.settings": true,
     "**/.factorypath": true
   },
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "workbench.startupEditor": "newUntitledFile",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb",
@@ -19,6 +18,7 @@
   "diffEditor.renderSideBySide": false,
   "vim.vimrc.enable": true,
   "vim.useSystemClipboard": true,
+  "vim.enableNeovim": true,
   "vim.whichwrap": "b,s,<,>,h,l",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
@@ -27,35 +27,28 @@
     "editor.defaultFormatter": "octref.vetur"
   },
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "xml.server.vmargs": "-Xmx1G",
-  "xml.format.enabled": true,
   "[javascript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "editor.inlineSuggest.enabled": true,
-  "workbench.editor.untitled.hint": "hidden",
-  "go.toolsManagement.autoUpdate": true,
+  "editor.inlineSuggest.enabled": false,
   "git.autofetch": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "github.copilot.enable": {
     "*": true,
-    "yaml": false,
     "plaintext": false,
     "markdown": true,
-    "python": false
+    "scminput": false,
+    "yaml": false,
+    "python": true
   },
   "git.confirmSync": false,
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
   "explorer.confirmDelete": false,
-  "eslint.format.enable": true,
-  "vetur.format.defaultFormatter.ts": "vscode-typescript",
-  "vetur.format.defaultFormatter.js": "vscode-typescript",
-  "editor.formatOnSave": true,
   "editor.formatOnSaveMode": "modifications",
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -69,5 +62,20 @@
   "gitlens.defaultDateFormat": "YYYY-MM-DD hh:mm",
   "gitlens.defaultDateShortFormat": "YYYY-MM-DD",
   "gitlens.defaultTimeFormat": "hh:mm",
-  "gitlens.codeLens.enabled": false
+  "gitlens.codeLens.enabled": false,
+  "cSpell.userWords": [
+    "antirez",
+    "Baeldung",
+    "Classpath",
+    "Customizer",
+    "Logback",
+    "Redisson",
+    "Redlock",
+    "Servlet"
+  ],
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "explorer.confirmPasteNative": false,
 }
