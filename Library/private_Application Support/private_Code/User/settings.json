@@ -19,6 +19,7 @@
   "diffEditor.renderSideBySide": false,
   "vim.vimrc.enable": true,
   "vim.useSystemClipboard": true,
+  "vim.whichwrap": "b,s,<,>,h,l",
   "[typescript]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -37,7 +38,6 @@
   "editor.inlineSuggest.enabled": true,
   "workbench.editor.untitled.hint": "hidden",
   "go.toolsManagement.autoUpdate": true,
-  "vim.whichwrap": "b,s,<,>,h,l",
   "git.autofetch": true,
   "[typescriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
