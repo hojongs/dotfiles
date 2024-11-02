@@ -1,13 +1,14 @@
-set hlsearch # hls
+set hlsearch " hls
 set incsearch
 set ignorecase
-set smartcase # When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not. For example, /The would find only "The", while /the would find "the" or "The" etc.
-# set surround
+set smartcase " When 'ignorecase' and 'smartcase' are both on, if a pattern contains an uppercase letter, it is case sensitive, otherwise, it is not. For example, /The would find only "The", while /the would find "the" or "The" etc.
+" set surround
 set clipboard=unnamed
-# set clipboard+=ideaput
+" set clipboard+=ideaput
 
-# https://superuser.com/a/677312
+" https://superuser.com/a/677312
 set visualbell
 set noerrorbells
 
 set whichwrap+=<,>,h,l
+
