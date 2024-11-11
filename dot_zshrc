@@ -246,7 +246,7 @@ fi
 
 export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
 
-if command -v asdf >/dev/null 2>&1; then
+if [ -f "~/.asdf/plugins/java/set-java-home.zsh" ]; then
     . ~/.asdf/plugins/java/set-java-home.zsh
 fi
 
