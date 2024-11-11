@@ -140,7 +140,9 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/dotfiles/bin:$PATH"
 
 # my .zshrc-hidden
-source $ZSH_HIDDEN_PATH
+if [ -f "$ZSH_HIDDEN_PATH" ]; then
+    source $ZSH_HIDDEN_PATH
+fi
 
 # kube-ps1
 # https://github.com/jonmosco/kube-ps1
