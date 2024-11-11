@@ -246,7 +246,9 @@ fi
 
 export PATH="/opt/homebrew/opt/gradle@7/bin:$PATH"
 
-. ~/.asdf/plugins/java/set-java-home.zsh
+if command -v asdf >/dev/null 2>&1; then
+    . ~/.asdf/plugins/java/set-java-home.zsh
+fi
 
 alias vi=nvim
 
