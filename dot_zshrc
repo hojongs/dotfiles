@@ -260,3 +260,6 @@ function yy() {
 
 alias hjs='just --justfile ~/hjs/cli2/justfile'
 
+# snap for Ubuntu
+export PATH="/snap/bin:$PATH"
+
