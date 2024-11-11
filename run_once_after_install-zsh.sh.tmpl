@@ -1,8 +1,0 @@
-{{ if eq .chezmoi.os "linux" -}}
-#!/usr/bin/env bash
-apt update
-apt install zsh
-zsh --version
-chsh -s $(which zsh)
-{{ end -}}
-
