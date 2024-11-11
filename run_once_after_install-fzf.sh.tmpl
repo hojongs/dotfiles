@@ -1,0 +1,10 @@
+{{ if eq .chezmoi.os "darwin" -}}
+#!/usr/bin/env bash
+brew install fzf
+{{ end -}}
+{{ if eq .chezmoi.os "linux" -}}
+#!/usr/bin/env bash
+
+sudo apt install fzf
+{{ end -}}
+
