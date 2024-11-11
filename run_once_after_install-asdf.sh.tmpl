@@ -14,5 +14,8 @@ fi
 zsh -c "asdf plugin-add java https://github.com/halcyon/asdf-java.git"
 {{ end -}}
 {{ if eq .chezmoi.os "linux" -}}
-{{ end -}}
+#!/usr/bin/env bash
 
+apt install curl git
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.1
+{{ end -}}
