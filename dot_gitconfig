@@ -4,7 +4,7 @@
     name = Jongho Jeon
     email = hojong.jjh@gmail.com
 [core]
-    editor = vim
+    editor = nvim
     pager = delta --color-only | less --tabs=4 -RFX
     # autocrlf: https://docs.github.com/en/get-started/getting-started-with-git/configuring-git-to-handle-line-endings#about-line-endings
     autocrlf = input
