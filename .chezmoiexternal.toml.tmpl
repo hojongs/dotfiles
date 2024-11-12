@@ -25,4 +25,10 @@
     stripComponents = 1
     refreshPeriod = "168h"
 {{ end -}}
+{{ if eq .chezmoi.os "linux" -}}
+["nvim"]
+    type = "archive"
+    url = "https://github.com/neovim/neovim/releases/download/v0.10.2/nvim-linux64.tar.gz"
+    stripComponents = 1
+{{ end -}}
 
