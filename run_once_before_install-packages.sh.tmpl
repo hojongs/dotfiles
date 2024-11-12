@@ -1,7 +1,7 @@
 {{ if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew install yazi tree gh fzf
+brew install yazi tree gh fzf starship
 brew install --cask raycast
 brew install --cask slack
 
@@ -27,4 +27,6 @@ sudo apt install gh fzf neovim
 apt install zsh
 zsh --version
 chsh -s $(which zsh)
+
+snap install starship --edge
 {{ end -}}
